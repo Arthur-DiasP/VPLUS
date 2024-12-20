@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vplus - Agendamentos</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Incluindo o Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <div class="inicio-animação">
+    <img src="LOGO VPLUS.png" alt="Logo" class="logo-inicio">
+  </div>
+  
+
+  <div class="inicio-conteúdo" style="display: none;">
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <img id="logo-vplay" src="LOGO VPLUS.png" alt="Vplay Logo" class="logo">
+        <h1 class="title">VPLUS</h1>
+        <ul class="menu">
+          <li id="menu-text"><a href="#inicio">Início</a></li>
+          <li id="menu-text"><a href="#funcionalidades">Funcionalidades</a></li>
+          <li id="menu-text"><a href="#planos">Planos</a></li>
+          <li id="menu-text"><a href="#ajuda">Ajuda</a></li>
+          <li id="menu-icon"><a href="#" class="material-icons">menu</a></li>
+          <li id="menu-text-button"><a href="#planos" class="button">Crie o seu agendamento</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+   <!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <span id="close-icon" class="material-icons" onclick="closeSidebar()">close</span>
+  <a href="#inicio">Início</a>
+  <a href="#funcionalidades">Funcionalidades</a>
+  <a href="#planos">Planos</a>
+  <a href="#ajuda">Ajuda</a>
+  <a href="#planos" class="button">Crie o seu agendamento</a>
+</div>
+
+  <main>
+    <section id="inicio" class="section">
+      <div>
+      <h2>FAÇA PARTE DA VPLUS E ORGANIZE SUA <span class="AGENDA-AZUL">AGENDA</span></h2>
+      <p>Agendamentos rápidos e práticos para você e seus clientes</p>
+      <img src="Imagem para o site Barbearia.png" alt="Imagem" class="section-image">
+      <a href="#planos"><button class="create-site-button">
+        <i class="material-icons">flash_on</i> Crie o seu site
+      </button></a>
+    </div>
+    </section>
+
+
+    <section id="funcionalidades" class="section">
+      <div class="section-divider-container">
+        <hr class="section-divider">
+        <p class="section-text">Confira a exclusividade da Vplus para organizar a sua agenda e expandir seu negócio.</p>
+      </div>
+      
+      <div class="card">
+        <img src="Imagem NC.png" alt="Imagem de Exemplo" class="card-image">
+        <div class="card-content">
+          <h2>Por quê a VPlus é a escolha preferida pelos profissionais de sucesso?
+            Veja Só.</h2>
+          <div class="icon-container">
+            <div class="icon">
+              <i class="material-icons">brush</i>
+              <h3>Personalizar Páginas</h3>
+            </div>
+            <div class="icon">
+              <i class="material-icons">event</i>
+              <h3>Agendamento Fácil</h3>
+            </div>
+          </div>
+          <div class="icon-container">
+            <div class="icon">
+              <i class="material-icons">web</i>
+              <h3>Responsivo</h3>
+            </div>
+            <div class="icon">
+              <i class="material-icons">support_agent</i>
+              <h3>Atendimento Diário</h3>
+            </div>
+          </div>
+          <div class="icon-container">
+            <div class="icon">
+              <i class="material-icons">person_search</i>
+              <h3>Consultas</h3>
+            </div>
+            <div class="icon">
+              <i class="material-icons">savings</i>
+              <h3>Investimentos</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="segunda-funcionalidades" class="section">
+      <div class="card-container">
+        <div class="card" id="card-preto">
+          <div class="card-content">
+            <h2>Consultar Agendamentos</h2>
+            <h3>Confira seus agendamentos com praticidade e rapidez</h3>
+            <button type="button">Veja</button>
+          <img class="Site" src="Site - Consulta.png" alt="Descrição da imagem 1">
+        </div>
+      </div>
+    
+        <div class="card" id="card-cinza">
+          <div class="card-content">
+            <h2>Dashboard Incrível</h2>
+            <h3>A gestão do seu negócio na palma da sua mão</h3>
+            <button type="button">Veja</button>
+          <img class="Oculto" src="Iphone V.png" alt="Descrição da imagem 2">
+      </div>
+    </div>
+    </section>
+    
+  
+  
+    
+    
+
+    <section id="terceira-funcionalidades" class="section">
+      <div class="card-container">
+        <div class="card" id="card-cinza">
+          <div class="card-content">
+            <h2>Agendamentos Simples</h2>
+            <h3>Facilidade na hora do cliente agendar</h3>
+            <button type="button">Veja</button>
+          <img class="Site" src="Site - Agendamento.png" alt="Descrição da imagem 1">
+        </div>
+      </div>
+    
+        <div class="card" id="card-preto">
+          <div class="card-content">
+            <h2>Melhores Investimentos</h2>
+            <h3>A maior novidade da Vplus</h3>
+            <button type="button">Veja</button>
+          <img class="Oculto" src="Iphone V.png" alt="Descrição da imagem 2">
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="funcionalidades-qr" class="section">
+      <div class="section-divider-container">
+        <hr id="section-divider-linha" class="section-divider">
+      </div>
+      
+      <div class="card">
+        <img src="QR CODE - VPLAY Barbearia.png" alt="Imagem de Exemplo" class="card-image" id="QRCODE"
+        >
+        <div class="card-content">
+          <h2>
+            Experimente uma demonstração - faça o scan agora!
+          </h2>
+          <h3 id="h3-informação">Clique em uma dessas caixas azuis para registrar o que poderia melhorar ou inovar no nosso site de agendamento</h3>
+          <div class="icon-container">
+            <div class="icon">
+              <i style="background-color: #FFBA02;" class="material-icons">brush</i>
+              <h3>Caixa de Ideias</h3>
+            </div>
+            <div id="ideias-funcionalidades" class="icon">
+              <i class="material-icons">devices</i>
+              <h3>Funcionalidades</h3>
+            </div>
+          </div>
+          <div class="icon-container">
+            <div id="ideias-comunicação" class="icon">
+              <i class="material-icons">chat</i>
+              <h3>Comunicação</h3>
+            </div>
+            <div id="ideiais-layoult" class="icon">
+              <i class="material-icons">web</i>
+              <h3>Layoult</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+
+    <section id="planos" class="section">
+      <h2>Planos</h2>
+      <p class="sub">Escolha o plano que melhor atende às suas necessidades.</p>
+
+       <!-- Barra de navegação (navbar) -->
+    <div class="selecionar-planos">
+      <a>
+          Mensal
+      </a>
+      <a>
+          Semestral
+      </a>
+      <a>
+          Anual
+      </a>
+  </div>
+
+      <!-- Cards dos Planos -->
+      <div class="plan-cards">
+        <!-- Card 1 -->
+        <div class="plan-card">
+          <h3 class="Plano">Plano Básico</h3>
+          <p class="valor-x"><strong>Preço:</strong> R$ 69,90/mês</p>
+          <p class="description"><i class="material-icons">check</i>O melhor para quem precisa de flexibilidade.</p>
+          <p class="description"><i class="material-icons">check</i>Economia: 1 conta.</p>
+          <p class="description"><i class="material-icons">check</i>250 clientes /mês: Perfeito para pequenos negócios.</p>
+          <p class="description"><i class="material-icons">check</i>Página de Investimentos para você e seus clientes.</p>
+          <p class="description"><i class="material-icons">check</i>Instagram integrado ao site.</p>
+          <a href="construtor-básico.html"><button class="subscribe-button">Assinar</button></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="plan-card">
+          <h3 class="Plano">Plano Padrão</h3>
+          <p class="valor-x"><strong>Preço:</strong> R$ 97,90/mês</p>
+          <p class="description"><i class="material-icons">check</i>Excelente para quem busca economia.</p>
+          <p class="description"><i class="material-icons">check</i>Flexibilidade: 2 contas.</p>
+          <p class="description"><i class="material-icons">check</i>650 clientes /mês: Expanda sua base.</p>
+           <p class="description"><i class="material-icons">check</i>Ideias para aumentar o faturamento da empresa.</p>
+          <p class="description"><i class="material-icons">check</i>Suporte Whatsapp: Sem interrupções.</p>
+          <a href="construtor-padrão.html"><button class="subscribe-button">Assinar</button></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="plan-card">
+          <h3 class="Plano">Plano Premium</h3>
+          <p class="valor-x"><strong>Preço:</strong> R$ 135,20/mês</p>
+          <p class="description"><i class="material-icons">check</i>O melhor custo-benefício para longo prazo.</p>
+          <p class="description"><i class="material-icons">check</i>Grande Equipe: 3-6 contas.</p>
+          <p class="description"><i class="material-icons">check</i>2000 clientes /mês: Máximo alcance.</p>
+          <p class="description"><i class="material-icons">check</i>Inovação: Compartilhe ideias.</p>
+          <p class="description"><i class="material-icons">check</i>Retorno 5%: Lucro sobre investimentos de clientes.</p>
+          <a href="construtor-premium.html"><button class="subscribe-button">Assinar</button></a>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <section id="ajuda" class="section">
+      <div class="card left-card">
+        <div class="card-content">
+          <h2>Dúvidas Frequentes</h2>
+          <p>Como podemos te ajudar?</p>
+          <a href="https://wa.me/5511954918978?text=VPlayAtendimento"><button>Atendimento</button></a>
+        </div>
+      </div>
+      <div class="card right-card">
+        <div class="card-content">
+          <p class="pergunta">Por que devo confiar?</p>
+          <p class="resposta">Porque é nova no mercado e tem ambição de sempre melhorar.</p>
+          <p class="pergunta">A plataforma é fácil de usar?</p>
+          <p class="resposta">Sim, é conhecida por sua facilidade de uso.</p>
+          <p class="pergunta">A plataforma permite cancelamentos e reagendamentos?</p>
+          <p class="resposta">Sim, permite cancelamentos e reagendamentos.</p>
+          <p class="pergunta">A plataforma permite agendamento em tempo real?</p>
+          <p class="resposta">Sim, permite agendamento em tempo real.</p>
+          <p class="pergunta">A plataforma envia lembretes automáticos?</p>
+          <p class="resposta">Sim, envia lembretes por whatsapp e você pode consultar pelo site.
+          </p>
+        </div>
+      </div>
+    </section>
+      
+    <section id="patrocinadores" class="section">
+      <h2>Patrocinador
+      </h2>
+      <div class="card-patrocinadores">
+        <img src="LOGO SLICED.png" alt="">
+      </div>
+    </section>
+
+    <section>
+      <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 VPLUS. Todos os direitos reservados.</p>
+                <p>Siga-nos no Instagram: <a href="https://www.instagram.com/vplay_agendamentos" target="_blank">@Vplus_Agendamentos</a></p>
+            </div>
+        </div>
+    </footer>
+    </section>
+
+    <script>
+      window.onload = function() {
+  setTimeout(function() {
+    // Esconde a animação e mostra o conteúdo suavemente
+    document.querySelector('.inicio-animação').style.display = 'none';
+    
+    const conteudo = document.querySelector('.inicio-conteúdo');
+    conteudo.style.display = 'block'; // Torna a div visível
+    setTimeout(function() {
+      conteudo.style.opacity = 1; // Aplica a transição suave para aparecer
+    }, 50); // Adiciona um pequeno atraso para garantir que a transição funcione
+  }, 4000); // 4000ms = 4 segundos
+};
+
+    </script>
+
+    <script src="index.js"></script>
+  </main>
+
+</div>
+</body>
+</html>

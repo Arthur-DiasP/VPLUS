@@ -1,0 +1,5315 @@
+body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f4f4;
+      overflow-x: hidden;
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .primeira-section {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .primeira-section label{
+      font-size: 20px;
+    }
+    
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    
+    .left-div,
+    .right-div {
+      flex: 1;
+      height: 100%;
+    }
+    
+    .left-div {
+      display: flex;
+      flex-direction: column; /* Organiza os itens verticalmente */
+      align-items: flex-start; /* Alinha os itens à esquerda */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Organização dos labels e inputs */
+    label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    
+    input[type="file"],
+    input[type="color"] {
+      width: 80%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+    /* Estilos de exemplo */
+    .color-input {
+      width: 50px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    /* Estilizando o botão "Próximo" */
+    .botão {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      width: 21%;
+      height: 15%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px; /* Espaçamento acima do botão */
+    }
+    
+    .botão:hover {
+      background-color: #045ebe; /* Mudança de cor ao passar o mouse */
+    }
+    
+    
+    .right-div {
+      background-color: #ccccff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iphone {
+      width: 300px;
+      height: 600px;
+      background-color: #fff;
+      border: 12px solid #333;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .iphone:before {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 94%;
+      background-color: #000;
+      position: absolute;
+      top: 3%;
+      left: 10%;
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .iphone .screen {
+      width:90%;
+      height: 85%;
+      background-color: #000000;
+      border-radius: 15px;
+      position: absolute;
+      top: 7.5%;
+      left: 5%;
+      overflow: hidden;
+    }
+
+    .iphone .screen-content {
+      padding: 0px;
+    }
+
+    .iphone .front-camera {
+      width: 8px;
+      height: 8px;
+      background-color: #000;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+
+    .iphone .speaker {
+      width: 50%;
+      height: 6px;
+      background-color: #888;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+
+    .iphone .home-button {
+      width: 60px;
+      height: 10px;
+      background-color: #000;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+
+    .black-section {
+        background-color: black;
+        flex: 1;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .white-section {
+        border-top-left-radius: 40px; /* canto superior esquerdo */
+        border-top-right-radius: 40px; /* canto superior direito */
+        background-color: #EAEAEA;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 102px;
+        margin-top: 10px;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    .conteiner {
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+
+    .barbeiro-button,
+    .cliente-button {
+        margin-top: 15px;
+        padding: 10px 30px;
+        background-color: #007bff;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .barbeiro-button:hover,
+    .cliente-button:hover {
+        background-color: #e5132a;
+    }
+
+
+
+    .navbar {
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      padding: 1px 0;
+      position: absolute;
+      bottom: 5px;
+      width: 80%;
+      z-index: 1;
+      border-radius: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      flex: 1;
+    }
+
+    .navbar a:hover {
+      background-color: #333;
+      border-radius: 30px;
+    }
+
+
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+
+    .segunda-section {
+    background-color: #f5f4f4;
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+
+    h1 {
+    color:#ffffff;
+    margin-top:40px;
+    margin-bottom: 70px;
+    margin-left: 70px;
+}
+
+.circle-container {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    left: 15px;
+}
+
+.circle img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.circle:hover {
+filter: brightness(1.3);
+}     
+
+.material-symbols-outlined {
+font-variation-settings:
+'FILL' 0,
+'wght' 300,
+'GRAD' -25,
+'opsz' 24
+}
+
+.rating {
+    position: absolute;
+    bottom: -10px;
+    right: 5px;
+    font-size: 1.2em;
+    color: white;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 5px 10px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 0;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha na parte inferior */
+    margin-top: 40px;
+    z-index: 1;
+    position: absolute; /* Fixa na parte inferior */
+    bottom: 50px;
+    width: 100%;
+}
+
+.button {
+    width: 180px;
+    height: 60px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #e5132a;
+}
+
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+  background-color: #f5f4f4;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .terceira-section .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+  .terceira-section #tipo-de-site{
+    width: 80%;
+    font-size: 15px;
+  }
+
+
+/* Estilos do formulário */
+#userForm {
+    width: 250px;
+    margin: 70px auto;
+  }
+  
+  /* Estilos dos grupos de formulário */
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  
+  /* Estilos das imagens nos grupos de formulário */
+  .form-group img {
+    padding: 7px;
+    background-color: #FFD700;
+    margin-right: 0px;
+    width: 10%;
+    margin-top: -20px;
+    margin-left: 5px;
+  }
+  
+  /* Estilos dos campos de entrada de texto e seleção */
+  input[type='text'],
+  input[type='tel'],
+  input[type='date'],
+  input[type='time'],
+  select,
+  .hora {
+    width: 80%;
+    padding: 12.9px;
+    margin-bottom: 19px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+
+  #buttonServiços{
+    width: 80%;
+    padding: 12.9px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+  
+  /* Placeholder preto e centralizado */
+  input[type='text']::placeholder,
+  input[type='tel']::placeholder,
+  input[type='date']::placeholder,
+  input[type='time']::placeholder,
+  select::placeholder {
+    color: black;
+  }
+  
+  /* Estilos dos campos de seleção */
+  select option {
+    font-size: 17px;
+    padding: 12px;
+  }
+  
+  
+  /* Estilos do contêiner dos serviços */
+  #ServiçosConteiner {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    width: 300px;
+  }
+  
+  .Itens-Serviços{
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos do valor total */
+  #valorTotal {
+    margin-top: 10px;
+  }
+  
+  
+  /* Estilos do botão de agendamento */
+  #confirmarBotao,
+  #submitButton {
+    margin-top: 20px;
+    background-color: #007bff;
+    font-size: 13px;
+    color: white;
+    width: 80%;
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  /* Estilos do botão de redefinição */
+  #resetButton {
+    background-color: #007bff; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branco */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Borda arredondada */
+    width:80%;
+    padding: 13px;
+    font-size: 13px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de apontador */
+    margin-top: 10px; /* Margem superior para separação do botão Agendar */
+  }
+
+  #submitButton, #resetButton {
+    margin-left: 25px;
+  }
+
+
+  #submitButton:hover, #resetButton:hover{
+    background-color: #0350a8;
+  }
+  
+  
+  
+  /* Estilos dos campos de checkbox */
+  .form-group input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  /* Estilos das imagens dentro dos campos de entrada, seleção e botão 'Serviços' */
+  input[type='text'] + img,
+  select + img,
+  #buttonServiços + img {
+    position: relative;
+    left: -25px;
+    top: 6px;
+  }
+  
+  /* Ajuste fino para o botão 'Serviços' */
+  #buttonServiços + img {
+    top: 4px;
+  }
+
+
+
+
+
+  /*------------------QUARTA SECTION -------------------------- */
+  
+
+  .quarta-section {
+    background-color: #f5f4f4;
+    width: 100%;
+    height: 100vh;
+  }
+
+.quarta-section .iphone .screen{
+    background-color: #f2f2f2;
+  }
+
+.quarta-section .login-container {
+    background-color: #fff;
+    margin-top: 45%;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.quarta-section .form-group {
+    margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+    display: block;
+    margin-top: -5px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+    width: calc(80% - 20px); /* Calcula a largura subtraindo a margem interna */
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    width: 50%;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quarta-section .login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Centraliza o botão */
+.quarta-section form {
+    text-align: center;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+  background-color: #e4e4e4;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quinta-section form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.quinta-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.quinta-section select, button{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+  width: 80%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.quinta-section button {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+  margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+  margin-top: 10px;
+}
+
+ /* Estilos opcionais */
+ .quinta-section #Selecionar-Serviços-Container {
+  display: none; /* Inicia oculto */
+  position: relative;
+  width: 30%; /* Ajuste conforme necessário */
+  height: 70vh; /* Altura mínima */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  padding: 10px; /* Adiciona espaço interno */
+  margin-top: 20px; /* Espaçamento superior */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+  margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+    .quinta-section .preço-input {
+      font-size: 13px;
+        width: 30%; /* Ocupa metade do espaço */
+        margin: 2px;
+        height: 30px; /* Altura dos inputs */
+        margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+    }
+
+.quinta-section #adicionar-input-button {
+  position: absolute;
+  width: 20%;
+  border-radius: 5px;
+  top: 0;
+  right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20%;
+}
+
+.quinta-section #salvar-button:hover{
+  background-color: #0056b3;
+  color: white;
+}
+
+.quinta-section .netlify-app {
+  display: inline-block; /* Para que fique ao lado do input */
+  vertical-align: middle; /* Alinhar verticalmente ao centro */
+  margin-left: 5px; /* Espaçamento à esquerda */
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+  width: 50%;
+  margin: auto;
+  display: block; /* Para que o botão fique em uma linha separada */
+  margin-top: 15px; /* Espaçamento acima do botão */
+  background-color: #0056b3;
+  color: white;
+}
+
+.quinta-section button.voltar-button-quinta:hover{
+  background-color: #013d7c;
+}
+
+
+.quinta-section button.continuar-button-quinta:hover{
+  background-color: #013d7c;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  background-color: #f5f4f4;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sexta-section form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sexta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.sexta-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.sexta-section .Input{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+
+.sexta-section button.continuar-button-sexta, button.voltar-button-sexta1 {
+  width: 50%;
+  margin: auto;
+  display: block; /* Para que o botão fique em uma linha separada */
+  margin-top: 15px; /* Espaçamento acima do botão */
+  background-color: #0056b3;
+  color: white;
+}
+
+.sexta-section button.voltar-button-sexta1:hover{
+  background-color: #013d7c;
+  cursor: pointer;
+}
+
+
+.sexta-section button.continuar-button-sexta:hover{
+  background-color: #013d7c;
+  cursor: pointer;
+}
+
+
+  /*------------------SÉTIMA SECTION -------------------------- */
+
+
+  .sétima-section {
+    background-color: #f5f4f4;
+    height: 100vh;
+  }
+
+
+#notificação1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 9999;
+}
+
+#notificação1 h1{
+  transform: translate(0px, 50px);
+  text-align: left;
+  font-size: 20px;
+  margin: auto;
+  width: 70%;
+}
+
+
+
+
+ /* Media Query para telas horizontais */
+ @media screen and (orientation: landscape) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .primeira-section {
+    width: 100%;
+    height: 200vh;
+  }
+  
+  
+  .left-div {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    background-color: #f5f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .primeiros-elementos{
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .primeiros-elementos label{
+    font-size: 15px;
+  }
+  
+  
+  input[type="file"],
+  input[type="color"] {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos de exemplo */
+  .color-input {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Estilizando o botão "Próximo" */
+  .botão {
+    background-color: #007bff;
+    color: white;
+    font-size: 15px;
+    width: 80%;
+    height: 8%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Espaçamento acima do botão */
+  }
+  
+  
+  
+  .right-div {
+    height: 200vh;
+    background-color: #ccccff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iphone {
+    margin-top: -30%;
+    width: 200px;
+    height: 400px;
+    background-color: #fff;
+    border: 12px solid #333;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .iphone:before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 94%;
+    background-color: #000;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    border-radius: 15px;
+    z-index: -1;
+  }
+
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+  .iphone .screen-content {
+    padding: 0px;
+  }
+
+  .iphone .front-camera {
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  .iphone .speaker {
+    width: 50%;
+    height: 6px;
+    background-color: #888;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+
+  .iphone .home-button {
+    width: 60px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+
+
+  .black-section {
+      background-color: black;
+      flex: 1;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .white-section {
+      border-top-left-radius: 40px; /* canto superior esquerdo */
+      border-top-right-radius: 40px; /* canto superior direito */
+      background-color: #EAEAEA;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 90px;
+      margin-top: 20px;
+  }
+
+  img {
+      width: 60%;
+      height: auto;
+  }
+
+  .conteiner {
+      display: flex;
+      flex-direction: column;
+      margin-top: -60px;
+  }
+
+  .barbeiro-button,
+  .cliente-button {
+      margin-top: 10px;
+      padding: 10px 30px;
+      background-color: #007bff;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+  }
+
+
+
+  .navbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 5px;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar i{
+    font-size: 15px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+
+  .navbar a:hover {
+    background-color: #333;
+    border-radius: 30px;
+  }
+
+
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+
+  .segunda-section {
+  width: 100%;
+  height: 380vh;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  background-color: #f5f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.segundo-elementos{
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.segunda-section label{
+  font-size: 15px;
+  width: 115%;
+}
+
+.segundo-elementos button{
+  width: 40%;
+}
+
+.iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #000000;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+
+  h1 {
+  font-size: 10px;
+  text-align: center;
+  color:white;
+  margin-top:20px;
+  margin-bottom: 90px;
+  margin-left: 10px;
+}
+
+.circle-container {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+transform: translate(0px, -90px);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: -10px;
+  left: 11px;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+  
+
+.rating {
+  position: absolute;
+  bottom: 25px;
+  right: 12px;
+  font-size: 10px;
+  color: white;
+}
+
+.rating i{
+font-size: 15px;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 3px 7px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 10px;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Alinha na parte inferior */
+  margin-top: 40px;
+  z-index: 1;
+  position: absolute; /* Fixa na parte inferior */
+  bottom: 20px;
+  width: 100%;
+}
+
+.button {
+  width: 130px;
+  height: 30px;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  outline: none;
+}
+
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+  width: 100%;
+  height: 200vh;
+}
+
+.terceiro-elementos{
+  margin-top:50px;
+  margin-left: 20px;
+}
+
+.terceiro-elementos label{
+  font-size: 15px;
+}
+
+.terceira-section .botão{
+    height: 9%;
+}
+
+.terceira-section .iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.terceira-section #tipo-de-site{
+  width: 80%;
+  font-size: 15px;
+}
+
+
+/* Estilos do formulário */
+#userForm {
+  width: 250px;
+  margin: 50px auto;
+  margin-left: 20px;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: -8px;
+}
+
+/* Estilos das imagens nos grupos de formulário */
+.form-group img {
+  padding: 3px;
+  background-color: #FFD700;
+  margin-right: 0px;
+  width: 5%;
+  margin-top: -18px;
+  margin-left: 8px;
+}
+
+/* Estilos dos campos de entrada de texto e seleção */
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='time'],
+select,
+.hora {
+  width: 40%;
+  padding: 5px;
+  margin-bottom: 19px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+#buttonServiços{
+  width: 40%;
+  padding: 5px;
+  margin-bottom: 24px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+
+/* Estilos do botão de agendamento */
+#confirmarBotao,
+#submitButton {
+  margin-top: 0px;
+  background-color: #007bff;
+  font-size: 10px;
+  color: white;
+  width: 50%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Estilos do botão de redefinição */
+#resetButton {
+  background-color: #007bff; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Borda arredondada */
+  width:50%;
+  padding: 5px;
+  font-size: 10px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de apontador */
+  margin-top: 10px; /* Margem superior para separação do botão Agendar */
+}
+
+#submitButton, #resetButton {
+  margin-left: 5px;
+}
+
+
+
+/* Estilos dos campos de checkbox */
+.form-group input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Estilos das imagens dentro dos campos de entrada, seleção e botão 'Serviços' */
+input[type='text'] + img,
+select + img,
+#buttonServiços + img {
+  position: relative;
+  left: -25px;
+  top: 6px;
+}
+
+/* Ajuste fino para o botão 'Serviços' */
+#buttonServiços + img {
+  top: 4px;
+}
+
+
+
+
+
+/*------------------QUARTA SECTION -------------------------- */
+
+
+.quarta-section {
+  width: 100%;
+  height: 200vh;
+}
+
+.quarta-elementos{
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.quarta-elementos label{
+  font-size: 15px;
+}
+
+.quarta-section .botão{
+  height: 8%;
+}
+
+.quarta-section .iphone .screen{
+  background-color: #f2f2f2;
+}
+
+.quarta-section .login-container {
+  background-color: #fff;
+  margin-top: 45%;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+font-size: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.quarta-section .form-group {
+  margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+  display: block;
+  margin-top: -5px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+  width: 65%;
+  padding: 2px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px;
+  width: 50%;
+  font-size: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+  background-color: #f5f4f4;
+width: 100%;
+height: 280vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.quinta-section form {
+width: 80%;
+max-width: 600px;
+height: 220vh;
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+text-align: center;
+color: #000;
+margin-left: 10px;
+margin-bottom: 10px;
+font-size: 25px;
+}
+
+.quinta-section label {
+display: block;
+margin-top: 10px;
+}
+
+.quinta-section select, button{
+width: 100%;
+padding: 10px;
+margin-top: 4px;
+font-size: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+width: 80%;
+padding: 10px;
+font-size: 15px;
+}
+
+.quinta-section .netlify-app{
+  margin-top: 0px;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+margin-top: 10px;
+}
+
+/* Estilos opcionais */
+.quinta-section #Selecionar-Serviços-Container {
+display: none; /* Inicia oculto */
+position: relative;
+width: 60%; /* Ajuste conforme necessário */
+height: 90vh; /* Altura mínima */
+border: 1px solid #ccc; /* Adiciona uma borda */
+padding: 10px; /* Adiciona espaço interno */
+margin-top: 20px; /* Espaçamento superior */
+overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+  .quinta-section .preço-input {
+    font-size: 13px;
+      width: 40%; /* Ocupa metade do espaço */
+      margin: 2px;
+      height: 30px; /* Altura dos inputs */
+      margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+  }
+
+.quinta-section #adicionar-input-button {
+position: absolute;
+width: 20%;
+border-radius: 5px;
+top: 0;
+right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+bottom: -90%;
+right: 10px;
+width: 40%;
+height: 50px;
+}
+
+
+.quinta-section .netlify-app {
+display: inline-block; /* Para que fique ao lado do input */
+vertical-align: middle; /* Alinhar verticalmente ao centro */
+margin-left: 5px; /* Espaçamento à esquerda */
+}
+
+.quinta-section .button-quinta{
+  margin-top: -10px;
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+width: 50%;
+font-size: 15px;
+margin: auto;
+display: block; /* Para que o botão fique em uma linha separada */
+margin-top: 5px; /* Espaçamento acima do botão */
+background-color: #0056b3;
+color: white;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  background-color: #f5f4f4;
+width: 100%;
+height: 280vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.sexta-section form {
+  margin-top: 200%;
+  width: 80%;
+  height: 210%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sexta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.sexta-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.sexta-section .Input{
+  width: 100%;
+  padding: 10px;
+  margin-top: -5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+
+
+.sexta-section .voltar-quinta-button,
+.sexta-section .concluido-button{
+display: block; /* Faz com que os botões fiquem em uma linha separada */
+width: 15%;
+height: 8%;
+margin: -30px;
+margin-left: 50px;
+font-size: 20px;
+color: white;
+border: none;
+border-radius: 10px;
+background-color: #054faf;
+margin-top: 20px; /* Adiciona espaço entre os botões */
+}
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+@media only screen and (min-width: 341px) and (max-width: 390px) {
+  
+  .primeira-section {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  
+  .left-div {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    background-color: #f5f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .primeiros-elementos{
+    margin-top: 30px;
+  }
+
+
+.primeiros-elementos label{
+  font-size: 15px;
+}
+  
+  
+  input[type="file"],
+  input[type="color"] {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos de exemplo */
+  .color-input {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Estilizando o botão "Próximo" */
+  .botão {
+    background-color: #007bff;
+    color: white;
+    font-size: 15px;
+    width: 80%;
+    height: 8%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Espaçamento acima do botão */
+  }
+  
+  
+  
+  .right-div {
+    background-color: #ccccff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iphone {
+    width: 200px;
+    height: 400px;
+    background-color: #fff;
+    border: 12px solid #333;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .iphone:before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 94%;
+    background-color: #000;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    border-radius: 15px;
+    z-index: -1;
+  }
+
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+  .iphone .screen-content {
+    padding: 0px;
+  }
+
+  .iphone .front-camera {
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  .iphone .speaker {
+    width: 50%;
+    height: 6px;
+    background-color: #888;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+
+  .iphone .home-button {
+    width: 60px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+
+
+  .black-section {
+      background-color: black;
+      flex: 1;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .white-section {
+      border-top-left-radius: 40px; /* canto superior esquerdo */
+      border-top-right-radius: 40px; /* canto superior direito */
+      background-color: #EAEAEA;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 90px;
+      margin-top: 20px;
+  }
+
+  img {
+      width: 60%;
+      height: auto;
+  }
+
+  .conteiner {
+      display: flex;
+      flex-direction: column;
+      margin-top: -60px;
+  }
+
+  .barbeiro-button,
+  .cliente-button {
+      margin-top: 10px;
+      padding: 10px 30px;
+      background-color: #007bff;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+  }
+
+
+
+  .navbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 5px;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar i{
+    font-size: 15px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+
+  .navbar a:hover {
+    background-color: #333;
+    border-radius: 30px;
+  }
+
+
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+
+.segunda-section {
+  width: 100%;
+  height: 200vh;
+}
+
+.segundo-elementos{
+  margin-left: 0px;
+  margin-top: 40px;
+  }
+  
+  .segundo-elementos label{
+  font-size: 15px;
+  }
+  
+  
+  .segundo-elementos .botão{
+  font-size: 20px;
+  width: 90%;
+  height: 5%;
+  }
+  
+  .segunda-section .right-div{
+  height: 200vh;
+  }
+
+
+.iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #000000;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+
+  h1 {
+  font-size: 15px;
+  text-align: center;
+  color:white;
+  margin-top:30px;
+  margin-bottom: 80px;
+  margin-left: 10px;
+}
+
+.circle-container {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  transform: translate(0px, -70px);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: -15px;
+    left: 19px;
+}
+
+.circle img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+    
+
+.rating {
+    position: absolute;
+    bottom: 25px;
+    right: 12px;
+    font-size: 8px;
+    color: white;
+}
+
+.rating i{
+  font-size: 10px;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 3px 7px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha na parte inferior */
+    margin-top: 40px;
+    z-index: 1;
+    position: absolute; /* Fixa na parte inferior */
+    bottom: 20px;
+    width: 100%;
+}
+
+.button {
+    width: 130px;
+    height: 35px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+  background-color: #e8e6e7;
+  width: 100%;
+  height: 100vh;
+}
+
+.terceiro-elementos{
+  margin-top:50px
+}
+
+.terceira-section .botão{
+    height: 9%;
+}
+
+.terceira-section .iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.terceira-section #tipo-de-site{
+  width: 80%;
+  font-size: 15px;
+}
+
+
+/* Estilos do formulário */
+#userForm {
+  width: 250px;
+  margin: 50px auto;
+  margin-left: 20px;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: -8px;
+}
+
+/* Estilos das imagens nos grupos de formulário */
+.form-group img {
+  padding: 3px;
+  background-color: #FFD700;
+  margin-right: 0px;
+  width: 5%;
+  margin-top: -18px;
+  margin-left: 8px;
+}
+
+/* Estilos dos campos de entrada de texto e seleção */
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='time'],
+select,
+.hora {
+  width: 40%;
+  padding: 5px;
+  margin-bottom: 19px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+#buttonServiços{
+  width: 40%;
+  padding: 5px;
+  margin-bottom: 24px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+
+/* Estilos do botão de agendamento */
+#confirmarBotao,
+#submitButton {
+  margin-top: 0px;
+  background-color: #007bff;
+  font-size: 10px;
+  color: white;
+  width: 50%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Estilos do botão de redefinição */
+#resetButton {
+  background-color: #007bff; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Borda arredondada */
+  width:50%;
+  padding: 5px;
+  font-size: 10px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de apontador */
+  margin-top: 10px; /* Margem superior para separação do botão Agendar */
+}
+
+#submitButton, #resetButton {
+  margin-left: 5px;
+}
+
+
+
+/* Estilos dos campos de checkbox */
+.form-group input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Estilos das imagens dentro dos campos de entrada, seleção e botão 'Serviços' */
+input[type='text'] + img,
+select + img,
+#buttonServiços + img {
+  position: relative;
+  left: -25px;
+  top: 6px;
+}
+
+/* Ajuste fino para o botão 'Serviços' */
+#buttonServiços + img {
+  top: 4px;
+}
+
+
+
+
+
+/*------------------QUARTA SECTION -------------------------- */
+
+
+.quarta-section {
+  background-color: #b3b3b3;
+  width: 100%;
+  height: 100vh;
+}
+
+.quarta-elementos{
+  margin-top: 50px;
+}
+
+.quarta-section .botão{
+  height: 8%;
+}
+
+.quarta-section .iphone .screen{
+  background-color: #f2f2f2;
+}
+
+.quarta-section .login-container {
+  background-color: #fff;
+  margin-top: 45%;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+font-size: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.quarta-section .form-group {
+  margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+  display: block;
+  margin-top: -5px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+  width: 65%;
+  padding: 2px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px;
+  width: 50%;
+  font-size: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+background-color: #e4e4e4;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.quinta-section form {
+width: 80%;
+max-width: 600px;
+height: 90vh;
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+text-align: center;
+color: #000;
+margin-left: 10px;
+margin-bottom: 10px;
+font-size: 25px;
+}
+
+.quinta-section label {
+display: block;
+margin-top: 10px;
+}
+
+.quinta-section select, button{
+width: 100%;
+padding: 10px;
+margin-top: 4px;
+font-size: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+width: 80%;
+padding: 10px;
+font-size: 15px;
+}
+
+.quinta-section .netlify-app{
+  margin-top: 0px;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+margin-top: 10px;
+}
+
+/* Estilos opcionais */
+.quinta-section #Selecionar-Serviços-Container {
+display: none; /* Inicia oculto */
+position: relative;
+width: 100%; /* Ajuste conforme necessário */
+height: 70vh; /* Altura mínima */
+border: 1px solid #ccc; /* Adiciona uma borda */
+padding: 10px; /* Adiciona espaço interno */
+margin-top: 20px; /* Espaçamento superior */
+overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+  .quinta-section .preço-input {
+    font-size: 13px;
+      width: 40%; /* Ocupa metade do espaço */
+      margin: 2px;
+      height: 30px; /* Altura dos inputs */
+      margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+  }
+
+.quinta-section #adicionar-input-button {
+position: absolute;
+width: 20%;
+border-radius: 5px;
+top: 0;
+right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+bottom: -70%;
+right: 10px;
+width: 40%;
+}
+
+
+.quinta-section .netlify-app {
+display: inline-block; /* Para que fique ao lado do input */
+vertical-align: middle; /* Alinhar verticalmente ao centro */
+margin-left: 5px; /* Espaçamento à esquerda */
+}
+
+.quinta-section .button-quinta{
+  margin-top: -10px;
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+width: 50%;
+font-size: 15px;
+margin: auto;
+display: block; /* Para que o botão fique em uma linha separada */
+margin-top: 5px; /* Espaçamento acima do botão */
+background-color: #0056b3;
+color: white;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  height: 100vh;
+}
+
+.sexta-section form {
+  margin-top: 280%;
+  width: 80%;
+  height: 240%; /* Ajuste a altura para acomodar todos os inputs */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.sexta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.sexta-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.sexta-section .Input{
+  width: 100%;
+  padding: 10px;
+  margin-top: -5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+
+
+.sexta-section .voltar-quinta-button,
+.sexta-section .concluido-button{
+display: block; /* Faz com que os botões fiquem em uma linha separada */
+width: 15%;
+height: 8%;
+margin: -30px;
+margin-left: 50px;
+font-size: 20px;
+color: white;
+border: none;
+border-radius: 10px;
+background-color: #054faf;
+margin-top: 20px; /* Adiciona espaço entre os botões */
+}
+
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 391px) and (max-width: 430px) {
+  .primeira-section {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    
+    .left-div {
+      display: flex;
+      flex-direction: column; /* Organiza os itens verticalmente */
+      align-items: flex-start; /* Alinha os itens à esquerda */
+      background-color: #f5f4f4;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .primeiros-elementos{
+      margin-top: 70px;
+    }
+    
+    
+    input[type="file"],
+    input[type="color"] {
+      width: 80%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+    /* Estilos de exemplo */
+    .color-input {
+      width: 50px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    /* Estilizando o botão "Próximo" */
+    .botão {
+      background-color: #007bff;
+      color: white;
+      font-size: 15px;
+      width: 80%;
+      height: 8%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px; /* Espaçamento acima do botão */
+    }
+    
+    
+    
+    .right-div {
+      background-color: #ccccff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iphone {
+      width: 200px;
+      height: 400px;
+      background-color: #fff;
+      border: 12px solid #333;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .iphone:before {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 94%;
+      background-color: #000;
+      position: absolute;
+      top: 3%;
+      left: 10%;
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .iphone .screen {
+      width:90%;
+      height: 85%;
+      background-color: #000000;
+      border-radius: 15px;
+      position: absolute;
+      top: 7.5%;
+      left: 5%;
+      overflow: hidden;
+    }
+
+    .iphone .screen-content {
+      padding: 0px;
+    }
+
+    .iphone .front-camera {
+      width: 8px;
+      height: 8px;
+      background-color: #000;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+
+    .iphone .speaker {
+      width: 50%;
+      height: 6px;
+      background-color: #888;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+
+    .iphone .home-button {
+      width: 60px;
+      height: 10px;
+      background-color: #000;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+
+    .black-section {
+        background-color: black;
+        flex: 1;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .white-section {
+        border-top-left-radius: 40px; /* canto superior esquerdo */
+        border-top-right-radius: 40px; /* canto superior direito */
+        background-color: #EAEAEA;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 90px;
+        margin-top: 20px;
+    }
+
+    img {
+        width: 60%;
+        height: auto;
+    }
+
+    .conteiner {
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+
+    .barbeiro-button,
+    .cliente-button {
+        margin-top: 10px;
+        padding: 10px 30px;
+        background-color: #007bff;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+
+
+    .navbar {
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      padding: 1px 0;
+      position: absolute;
+      bottom: 5px;
+      width: 80%;
+      z-index: 1;
+      border-radius: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar i{
+      font-size: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      flex: 1;
+    }
+
+    .navbar a:hover {
+      background-color: #333;
+      border-radius: 30px;
+    }
+
+
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+    .segunda-section {
+    width: 100%;
+    height: 150vh;
+  }
+
+  .segundo-elementos{
+    margin-left: 10px;
+    margin-top: 40px;
+    }
+    
+    .segundo-elementos label{
+    font-size: 15px;
+    }
+    
+    
+    .segundo-elementos .botão{
+    font-size: 20px;
+    width: 90%;
+    height: 5%;
+    }
+    
+    .segunda-section .right-div{
+    height: 160vh;
+    }
+
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+
+    h1 {
+    font-size: 15px;
+    text-align: center;
+    color:white;
+    margin-top:30px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+}
+
+.circle-container {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+  transform: translate(0px, -70px);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: -15px;
+    left: 20px;
+}
+
+.circle img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+    
+
+.rating {
+    position: absolute;
+    bottom: 25px;
+    right: 12px;
+    font-size: 8px;
+    color: white;
+}
+
+.rating i{
+  font-size: 10px;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 3px 7px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha na parte inferior */
+    margin-top: 40px;
+    z-index: 1;
+    position: absolute; /* Fixa na parte inferior */
+    bottom: 20px;
+    width: 100%;
+}
+
+.button {
+    width: 130px;
+    height: 35px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+    background-color: #e8e6e7;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .terceiro-elementos{
+    margin-top:110px
+  }
+
+  .terceira-section .botão{
+      height: 9%;
+  }
+
+  .terceira-section .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+  .terceira-section #tipo-de-site{
+    width: 80%;
+    font-size: 15px;
+  }
+
+
+/* Estilos do formulário */
+#userForm {
+    width: 250px;
+    margin: 50px auto;
+    margin-left: 20px;
+  }
+  
+  /* Estilos dos grupos de formulário */
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: -8px;
+  }
+  
+  /* Estilos das imagens nos grupos de formulário */
+  .form-group img {
+    padding: 3px;
+    background-color: #FFD700;
+    margin-right: 0px;
+    width: 5%;
+    margin-top: -18px;
+    margin-left: 8px;
+  }
+  
+  /* Estilos dos campos de entrada de texto e seleção */
+  input[type='text'],
+  input[type='tel'],
+  input[type='date'],
+  input[type='time'],
+  select,
+  .hora {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 19px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 8px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+
+  #buttonServiços{
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 24px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 8px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+  
+  
+  /* Estilos do botão de agendamento */
+  #confirmarBotao,
+  #submitButton {
+    margin-top: 0px;
+    background-color: #007bff;
+    font-size: 10px;
+    color: white;
+    width: 50%;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  /* Estilos do botão de redefinição */
+  #resetButton {
+    background-color: #007bff; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branco */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Borda arredondada */
+    width:50%;
+    padding: 5px;
+    font-size: 10px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de apontador */
+    margin-top: 10px; /* Margem superior para separação do botão Agendar */
+  }
+
+  #submitButton, #resetButton {
+    margin-left: 5px;
+  }
+
+  
+  
+  /* Estilos dos campos de checkbox */
+  .form-group input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  /* Estilos das imagens dentro dos campos de entrada, seleção e botão 'Serviços' */
+  input[type='text'] + img,
+  select + img,
+  #buttonServiços + img {
+    position: relative;
+    left: -25px;
+    top: 6px;
+  }
+  
+  /* Ajuste fino para o botão 'Serviços' */
+  #buttonServiços + img {
+    top: 4px;
+  }
+
+
+
+
+
+  /*------------------QUARTA SECTION -------------------------- */
+  
+
+  .quarta-section {
+    background-color: #b3b3b3;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .quarta-elementos{
+    margin-top: 50px;
+  }
+
+  .quarta-section .botão{
+    height: 8%;
+  }
+
+.quarta-section .iphone .screen{
+    background-color: #f2f2f2;
+  }
+
+.quarta-section .login-container {
+    background-color: #fff;
+    margin-top: 45%;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+  font-size: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.quarta-section .form-group {
+    margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+    display: block;
+    margin-top: -5px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+    width: 65%;
+    padding: 2px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 6px;
+    width: 50%;
+    font-size: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+  background-color: #e4e4e4;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quinta-section form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.quinta-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.quinta-section select, button{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+  width: 80%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.quinta-section button {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+  margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+  margin-top: 10px;
+}
+
+ /* Estilos opcionais */
+ .quinta-section #Selecionar-Serviços-Container {
+  display: none; /* Inicia oculto */
+  position: relative;
+  width: 100%; /* Ajuste conforme necessário */
+  height: 70vh; /* Altura mínima */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  padding: 10px; /* Adiciona espaço interno */
+  margin-top: 20px; /* Espaçamento superior */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+  margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+    .quinta-section .preço-input {
+      font-size: 13px;
+        width: 40%; /* Ocupa metade do espaço */
+        margin: 2px;
+        height: 30px; /* Altura dos inputs */
+        margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+    }
+
+.quinta-section #adicionar-input-button {
+  position: absolute;
+  width: 20%;
+  border-radius: 5px;
+  top: 0;
+  right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+bottom: -50%;
+  right: 10px;
+  width: 30%;
+}
+
+
+.quinta-section .netlify-app {
+  display: inline-block; /* Para que fique ao lado do input */
+  vertical-align: middle; /* Alinhar verticalmente ao centro */
+  margin-left: 5px; /* Espaçamento à esquerda */
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+  width: 50%;
+  margin: auto;
+  display: block; /* Para que o botão fique em uma linha separada */
+  margin-top: 15px; /* Espaçamento acima do botão */
+  background-color: #0056b3;
+  color: white;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  height: 100vh;
+}
+
+.sexta-section form {
+  margin-top: 250%;
+  width: 80%;
+  height: 230%; /* Ajuste a altura para acomodar todos os inputs */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.sexta-section .voltar-quinta-button,
+.sexta-section .concluido-button{
+  display: block; /* Faz com que os botões fiquem em uma linha separada */
+  width: 15%;
+  height: 8%;
+  margin: -30px;
+  margin-left: 50px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #054faf;
+  margin-top: 20px; /* Adiciona espaço entre os botões */
+}
+
+}
+
+
+
+
+
+
+@media only screen and (min-width: 767px) and (max-width: 885px) {
+  .primeira-section {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  
+  .left-div {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    background-color: #f5f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .primeiros-elementos{
+    margin-top: 190px;
+    margin-left: 10px;
+  }
+
+  .primeiros-elementos label{
+    font-size: 21px;
+  }
+  
+  
+  /* Estilizando o botão "Próximo" */
+  .botão {
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    width: 80%;
+    height: 10%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espaçamento acima do botão */
+  }
+  
+  
+  
+  .right-div {
+    background-color: #ccccff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iphone {
+    width: 300px;
+    height: 600px;
+    background-color: #fff;
+    border: 12px solid #333;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+
+  .segunda-section {
+  width: 100%;
+  height: 130vh;
+}
+
+.segundo-elementos{
+  margin-top: 190px;
+  margin-left: 10px;
+}
+
+.segundo-elementos label{
+  font-size: 21px;
+}
+
+.segundo-elementos .botão{
+  font-size: 20px;
+  width: 70%;
+  height: 6%;
+}
+
+.segunda-section .right-div{
+height: 160vh;
+}
+
+.iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #000000;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+
+  h1 {
+  color:white;
+  margin-top:40px;
+  margin-bottom: 70px;
+  margin-left: 70px;
+}
+
+.circle-container {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 10px;
+  margin-top: -30px;
+  left: 15px;
+}
+
+.circle img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.rating {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  font-size: 1.1em;
+  color: white;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 3px 10px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 0;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Alinha na parte inferior */
+  margin-top: 40px;
+  z-index: 1;
+  position: absolute; /* Fixa na parte inferior */
+  bottom: 50px;
+  width: 100%;
+}
+
+.button {
+  width: 180px;
+  height: 50px;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  outline: none;
+}
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+  background-color: #e8e6e7;
+  width: 100%;
+  height: 100vh;
+}
+
+.terceiro-elementos{
+  margin-top:190px;
+  margin-left:10px;
+}
+
+.terceiro-elementos label{
+  font-size: 21px;
+}
+
+.terceiro-elementos .botão{
+  font-size: 20px;
+  width: 90%;
+  height: 12%;
+}
+
+.terceira-section .iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.terceira-section #tipo-de-site{
+  width: 80%;
+  font-size: 18px;
+}
+
+
+/* Estilos do formulário */
+#userForm {
+  width: 250px;
+  margin: 70px auto;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+/* Estilos das imagens nos grupos de formulário */
+.form-group img {
+  padding: 7px;
+  background-color: #FFD700;
+  margin-right: 0px;
+  width: 10%;
+  margin-top: -20px;
+  margin-left: 5px;
+}
+
+/* Estilos dos campos de entrada de texto e seleção */
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='time'],
+select,
+.hora {
+  width: 80%;
+  padding: 12.9px;
+  margin-bottom: 19px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+#buttonServiços{
+  width: 80%;
+  padding: 12.9px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+
+
+/* Estilos do botão de agendamento */
+#confirmarBotao,
+#submitButton {
+  margin-top: 20px;
+  background-color: #007bff;
+  font-size: 13px;
+  color: white;
+  width: 80%;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Estilos do botão de redefinição */
+#resetButton {
+  background-color: #007bff; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Borda arredondada */
+  width:80%;
+  padding: 13px;
+  font-size: 13px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de apontador */
+  margin-top: 10px; /* Margem superior para separação do botão Agendar */
+}
+
+
+
+
+
+
+/*------------------QUARTA SECTION -------------------------- */
+
+
+.quarta-section {
+  background-color: #b3b3b3;
+  width: 100%;
+  height: 100vh;
+}
+
+.quarta-elementos{
+  margin-top: 150px;
+  margin-left: 10px;
+}
+
+.quarta-elementos label{
+  font-size: 21px;
+}
+
+.quarta-elementos .botão{
+  font-size: 20px;
+  width: 80%;
+  height: 10%;
+}
+
+.quarta-section .login-container {
+  background-color: #fff;
+  margin-top: 45%;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.quarta-section .form-group {
+  margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+  display: block;
+  margin-top: -5px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+  width: calc(80% - 20px); /* Calcula a largura subtraindo a margem interna */
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  width: 50%;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+background-color: #e4e4e4;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.quinta-section form {
+width: 80%;
+max-width: 600px;
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+text-align: center;
+color: #000;
+margin-left: 10px;
+margin-bottom: 10px;
+font-size: 35px;
+}
+
+.quinta-section label {
+  font-size: 20px;
+display: block;
+margin-top: 10px;
+}
+
+.quinta-section select, button{
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+font-size: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+width: 80%;
+padding: 10px;
+font-size: 20px;
+}
+
+.quinta-section button {
+background-color: #ffffff;
+color: #000000;
+cursor: pointer;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+margin-top: 10px;
+}
+
+/* Estilos opcionais */
+.quinta-section #Selecionar-Serviços-Container {
+display: none; /* Inicia oculto */
+position: relative;
+width: 40%; /* Ajuste conforme necessário */
+height: 70vh; /* Altura mínima */
+border: 1px solid #ccc; /* Adiciona uma borda */
+padding: 10px; /* Adiciona espaço interno */
+margin-top: 20px; /* Espaçamento superior */
+overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+  .quinta-section .preço-input {
+    font-size: 13px;
+      width: 40%; /* Ocupa metade do espaço */
+      margin: 2px;
+      height: 30px; /* Altura dos inputs */
+      margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+  }
+
+.quinta-section #adicionar-input-button {
+position: absolute;
+width: 20%;
+border-radius: 5px;
+top: 0;
+right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+bottom: 10px;
+right: 10px;
+width: 40%;
+}
+
+
+.quinta-section .netlify-app {
+display: inline-block; /* Para que fique ao lado do input */
+vertical-align: middle; /* Alinhar verticalmente ao centro */
+margin-left: 5px; /* Espaçamento à esquerda */
+font-size: 18px;
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+width: 50%;
+padding: 15px;
+font-size: 20px;
+margin: auto;
+display: block; /* Para que o botão fique em uma linha separada */
+margin-top: 15px; /* Espaçamento acima do botão */
+background-color: #0056b3;
+color: white;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  height: 100vh;
+}
+
+.sexta-section form {
+  margin-top: 130%;
+  width: 80%;
+  height: 190%; /* Ajuste a altura para acomodar todos os inputs */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sexta-section label{
+  font-size: 20px;
+}
+
+.sexta-section .Input{
+  font-size: 20px;
+}
+
+
+.sexta-section button.voltar-button-sexta1, button.continuar-button-sexta {
+  width: 50%;
+  padding: 15px;
+  font-size: 20px;
+  margin: auto;
+  display: block; /* Para que o botão fique em uma linha separada */
+  margin-top: 15px; /* Espaçamento acima do botão */
+  background-color: #0056b3;
+  color: white;
+  }
+
+
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1290px) {
+  body, html {
+    background-color: #f5f4f4;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .primeira-section {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .primeira-section label{
+    font-size: 23px;
+  }
+
+  .primeiros-elementos{
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-div,
+  .right-div {
+    flex: 1;
+    height: 100%;
+  }
+  
+  .left-div {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Organização dos labels e inputs */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  
+  /* Estilizando o botão "Próximo" */
+  .botão {
+    background-color: #007bff;
+    color: white;
+    font-size: 25px;
+    width: 50%;
+    height: 10%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Espaçamento acima do botão */
+  }
+  
+  
+  
+  .right-div {
+    background-color: #ccccff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iphone {
+    margin-top: -10px;
+    width: 300px;
+    height: 600px;
+    background-color: #fff;
+    border: 12px solid #333;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .iphone:before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 94%;
+    background-color: #000;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    border-radius: 15px;
+    z-index: -1;
+  }
+
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+
+  .iphone .screen-content {
+    padding: 0px;
+  }
+
+  .iphone .front-camera {
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  .iphone .speaker {
+    width: 50%;
+    height: 6px;
+    background-color: #888;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+
+  .iphone .home-button {
+    width: 60px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+
+
+  .black-section {
+      background-color: black;
+      flex: 1;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .white-section {
+      border-top-left-radius: 40px; /* canto superior esquerdo */
+      border-top-right-radius: 40px; /* canto superior direito */
+      background-color: #EAEAEA;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 102px;
+      margin-top: 10px;
+  }
+
+  img {
+      width: 80%;
+      height: auto;
+  }
+
+  .conteiner {
+      display: flex;
+      flex-direction: column;
+      margin-top: -60px;
+  }
+
+  .barbeiro-button,
+  .cliente-button {
+      margin-top: 15px;
+      padding: 10px 30px;
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+  }
+
+  .barbeiro-button:hover,
+  .cliente-button:hover {
+      background-color: #e5132a;
+  }
+
+
+
+  .navbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 5px;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+  }
+
+  .navbar a:hover {
+    background-color: #333;
+    border-radius: 30px;
+  }
+
+
+
+
+/*---------------------SEGUNDA SECTION------------- */
+
+
+.segunda-section {
+width: 100%;
+height: 100vh;
+}
+
+.segundo-elementos{
+margin-left: 30px;
+margin-top: 100px;
+}
+
+.segundo-elementos label{
+font-size: 20px;
+}
+
+
+.segundo-elementos .botão{
+font-size: 20px;
+width: 60%;
+height: 5.5%;
+}
+
+.segunda-section .right-div{
+height: 160vh;
+}
+
+
+.iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #000000;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+
+h1 {
+  color:white;
+  margin-top:40px;
+  margin-bottom: 70px;
+  margin-left: 10px;
+}
+
+.circle-container {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 10px;
+  margin-top: -10px;
+  left: 15px;
+}
+
+.circle img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.rating {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  font-size: 1.1em;
+  color: white;
+}
+
+
+.rating::before {
+content: '';
+background-color: #005f73; /* Cor de fundo da plaquinha */
+color: white; /* Cor do texto da plaquinha */
+padding: 3px 10px; /* Espaçamento interno da plaquinha */
+border-radius: 5px; /* Borda arredondada da plaquinha */
+position: absolute;
+bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+right: 0;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Alinha na parte inferior */
+  margin-top: 40px;
+  z-index: 1;
+  position: absolute; /* Fixa na parte inferior */
+  bottom: 50px;
+  width: 100%;
+}
+
+.button {
+  width: 180px;
+  height: 50px;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #e5132a;
+}
+
+
+
+/*-------------- TERCEIRA SECTION ------------------------- */
+
+.terceira-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.terceiro-elementos{
+  margin-left: 30px;
+  margin-top: 80px;
+}
+
+.terceiro-elementos label{
+  font-size: 20px;
+}
+
+.terceiro-elementos .botão{
+  font-size: 25px;
+  width: 60%;
+  height: 13%;
+}
+
+.terceira-section .iphone .screen {
+  width:90%;
+  height: 85%;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.terceira-section #tipo-de-site{
+  width: 80%;
+  font-size: 15px;
+}
+
+
+/* Estilos do formulário */
+#userForm {
+  width: 250px;
+  margin: 70px auto;
+}
+
+/* Estilos dos grupos de formulário */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+/* Estilos das imagens nos grupos de formulário */
+.form-group img {
+  padding: 7px;
+  background-color: #FFD700;
+  margin-right: 0px;
+  width: 10%;
+  margin-top: -20px;
+  margin-left: 5px;
+}
+
+/* Estilos dos campos de entrada de texto e seleção */
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='time'],
+select,
+.hora {
+  width: 80%;
+  padding: 12.9px;
+  margin-bottom: 19px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+#buttonServiços{
+  width: 80%;
+  padding: 12.9px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  position: relative; /* Adicionado para posicionar a imagem */
+}
+
+
+
+/* Estilos do botão de agendamento */
+#confirmarBotao,
+#submitButton {
+  margin-top: 20px;
+  background-color: #007bff;
+  font-size: 13px;
+  color: white;
+  width: 80%;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Estilos do botão de redefinição */
+#resetButton {
+  background-color: #007bff; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branco */
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Borda arredondada */
+  width:80%;
+  padding: 13px;
+  font-size: 13px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de apontador */
+  margin-top: 10px; /* Margem superior para separação do botão Agendar */
+}
+
+#submitButton, #resetButton {
+  margin-left: 25px;
+}
+
+
+
+
+
+
+/*------------------QUARTA SECTION -------------------------- */
+
+
+.quarta-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.quarta-elementos{
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.quarta-elementos label{
+  font-size: 20px;
+}
+
+.quarta-elementos .botão{
+  font-size: 25px;
+  width: 70%;
+  height: 13%;
+}
+
+.quarta-section .iphone .screen{
+  background-color: #f2f2f2;
+}
+
+.quarta-section .login-container {
+  background-color: #fff;
+  margin-top: 45%;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.quarta-section .form-group {
+  margin-bottom: 20px;
+}
+
+.quarta-section .form-group label{
+  display: block;
+  margin-top: -5px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.quarta-section .form-group input {
+  width: calc(80% - 20px); /* Calcula a largura subtraindo a margem interna */
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.quarta-section .login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  width: 50%;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quarta-section .login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Centraliza o botão */
+.quarta-section form {
+  text-align: center;
+}
+
+
+
+/*------------------QUINTA SECTION -------------------------- */
+
+.quinta-section {
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.quinta-section form {
+margin-top: 0%;
+width: 90%;
+height: 85vh;
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quinta-section h1 {
+text-align: center;
+color: #000;
+margin-left: 10px;
+margin-bottom: 10px;
+font-size: 30px;
+}
+
+.quinta-section label {
+  font-size: 20px;
+display: block;
+margin-top: 10px;
+}
+
+.quinta-section select, button{
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+font-size: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.quinta-section #NomeSite{
+width: 80%;
+padding: 10px;
+font-size: 20px;
+}
+
+.quinta-section button {
+background-color: #ffffff;
+color: #000000;
+cursor: pointer;
+}
+
+
+.quinta-section .serviço-input,
+.preço-input {
+margin-bottom: 10px;
+}
+
+.quinta-section .botão {
+margin-top: 10px;
+}
+
+/* Estilos opcionais */
+.quinta-section #Selecionar-Serviços-Container {
+display: none; /* Inicia oculto */
+position: relative;
+width: 30%; /* Ajuste conforme necessário */
+height: 70vh; /* Altura mínima */
+border: 1px solid #ccc; /* Adiciona uma borda */
+padding: 10px; /* Adiciona espaço interno */
+margin-top: -30%; /* Espaçamento superior */
+overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.quinta-section h3{
+margin-top: 50px;
+}
+
+.quinta-section .serviço-input,
+  .quinta-section .preço-input {
+    font-size: 13px;
+      width: 30%; /* Ocupa metade do espaço */
+      margin: 2px;
+      height: 30px; /* Altura dos inputs */
+      margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+  }
+
+.quinta-section #adicionar-input-button {
+position: absolute;
+width: 20%;
+border-radius: 5px;
+top: 0;
+right: 5px;
+}
+
+.quinta-section #salvar-button{
+position: absolute;
+bottom: 10px;
+right: 10px;
+width: 20%;
+}
+
+.quinta-section #salvar-button:hover{
+background-color: #0056b3;
+color: white;
+}
+
+.quinta-section .netlify-app {
+display: inline-block; /* Para que fique ao lado do input */
+vertical-align: middle; /* Alinhar verticalmente ao centro */
+margin-left: 5px; /* Espaçamento à esquerda */
+font-size: 20px;
+}
+
+.quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+width: 50%;
+font-size: 20px;
+margin: auto;
+display: block; /* Para que o botão fique em uma linha separada */
+margin-top: 15px; /* Espaçamento acima do botão */
+background-color: #0056b3;
+color: white;
+}
+
+/*------------------SEXTA SECTION -------------------------- */
+
+
+.sexta-section {
+  height: 100vh;
+}
+
+.sexta-section form {
+  margin-top: 100%;
+  width: 90%;
+  height: 250%; /* Ajuste a altura para acomodar todos os inputs */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sexta-section h1 {
+text-align: center;
+color: #000;
+margin-left: 10px;
+margin-bottom: 10px;
+font-size: 30px;
+}
+
+.sexta-section label {
+  font-size: 20px;
+display: block;
+margin-top: 5px;
+}
+
+.sexta-section .Input{
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+font-size: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+
+
+.sexta-section button.continuar-button-sexta, button.voltar-button-sexta1 {
+width: 50%;
+font-size: 20px;
+margin: auto;
+display: block; /* Para que o botão fique em uma linha separada */
+margin-top: 15px; /* Espaçamento acima do botão */
+background-color: #0056b3;
+color: white;
+}
+
+  }
+
+
+
+
+
+
+
+
+  @media only screen and (min-width: 1300px) {
+    body, html {
+      background-color: #f5f4f4;
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+  
+    .primeira-section {
+      width: 100%;
+      height: 100vh;
+    }
+  
+    .primeira-section label{
+      font-size: 20px;
+    }
+  
+    .primeiros-elementos{
+      margin-left: 30px;
+      margin-top: 50px;
+    }
+    
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    
+    .left-div,
+    .right-div {
+      flex: 1;
+      height: 100%;
+    }
+    
+    .left-div {
+      display: flex;
+      flex-direction: column; /* Organiza os itens verticalmente */
+      align-items: flex-start; /* Alinha os itens à esquerda */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Organização dos labels e inputs */
+    label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  
+    
+    /* Estilizando o botão "Próximo" */
+    .botão {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      width: 50%;
+      height: 13%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px; /* Espaçamento acima do botão */
+    }
+    
+    
+    
+    .right-div {
+      background-color: #ccccff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .iphone {
+      margin-top: -10px;
+      width: 300px;
+      height: 600px;
+      background-color: #fff;
+      border: 12px solid #333;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .iphone:before {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 94%;
+      background-color: #000;
+      position: absolute;
+      top: 3%;
+      left: 10%;
+      border-radius: 15px;
+      z-index: -1;
+    }
+  
+    .iphone .screen {
+      width:90%;
+      height: 85%;
+      background-color: #000000;
+      border-radius: 15px;
+      position: absolute;
+      top: 7.5%;
+      left: 5%;
+      overflow: hidden;
+    }
+  
+    .iphone .screen-content {
+      padding: 0px;
+    }
+  
+    .iphone .front-camera {
+      width: 8px;
+      height: 8px;
+      background-color: #000;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+  
+    .iphone .speaker {
+      width: 50%;
+      height: 6px;
+      background-color: #888;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+  
+    .iphone .home-button {
+      width: 60px;
+      height: 10px;
+      background-color: #000;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+  
+  
+    .black-section {
+        background-color: black;
+        flex: 1;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .white-section {
+        border-top-left-radius: 40px; /* canto superior esquerdo */
+        border-top-right-radius: 40px; /* canto superior direito */
+        background-color: #EAEAEA;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 102px;
+        margin-top: 10px;
+    }
+  
+    img {
+        width: 80%;
+        height: auto;
+    }
+  
+    .conteiner {
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+  
+    .barbeiro-button,
+    .cliente-button {
+        margin-top: 15px;
+        padding: 10px 30px;
+        background-color: #007bff;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+  
+    .barbeiro-button:hover,
+    .cliente-button:hover {
+        background-color: #e5132a;
+    }
+  
+  
+  
+    .navbar {
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      padding: 1px 0;
+      position: absolute;
+      bottom: 5px;
+      width: 80%;
+      z-index: 1;
+      border-radius: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      flex: 1;
+    }
+  
+    .navbar a:hover {
+      background-color: #333;
+      border-radius: 30px;
+    }
+  
+  
+  
+  
+  /*---------------------SEGUNDA SECTION------------- */
+  
+  
+    .segunda-section {
+    width: 100%;
+    height: 160vh;
+  }
+  
+  .segundo-elementos{
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+  
+  .segundo-elementos label{
+    font-size: 20px;
+  }
+  
+  
+  .segundo-elementos .botão{
+    font-size: 20px;
+    width: 60%;
+    height: 5.5%;
+  }
+  
+.segunda-section .right-div{
+  height: 160vh;
+}
+  
+  .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+  
+  
+    h1 {
+    color:white;
+    margin-top:40px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+  }
+  
+  .circle-container {
+    display: flex;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    margin-top: -10px;
+    left: 15px;
+  }
+  
+  .circle img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  
+  .rating {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    font-size: 1.1em;
+    color: white;
+  }
+  
+  
+  .rating::before {
+  content: '';
+  background-color: #005f73; /* Cor de fundo da plaquinha */
+  color: white; /* Cor do texto da plaquinha */
+  padding: 3px 10px; /* Espaçamento interno da plaquinha */
+  border-radius: 5px; /* Borda arredondada da plaquinha */
+  position: absolute;
+  bottom: -10px; /* Posicionamento em relação ao elemento pai (rating) */
+  right: 0;
+  }
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha na parte inferior */
+    margin-top: 40px;
+    z-index: 1;
+    position: absolute; /* Fixa na parte inferior */
+    bottom: 50px;
+    width: 100%;
+  }
+  
+  .button {
+    width: 180px;
+    height: 50px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .button:hover {
+    background-color: #e5132a;
+  }
+  
+  
+  
+  /*-------------- TERCEIRA SECTION ------------------------- */
+  
+  .terceira-section {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .terceiro-elementos{
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+  
+  .terceiro-elementos label{
+    font-size: 20px;
+  }
+  
+  .terceiro-elementos .botão{
+    font-size: 20px;
+    width: 60%;
+    height: 10%;
+  }
+  
+  .terceira-section .iphone .screen {
+    width:90%;
+    height: 85%;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+    position: absolute;
+    top: 7.5%;
+    left: 5%;
+    overflow: hidden;
+  }
+  
+  .terceira-section #tipo-de-site{
+    width: 80%;
+    font-size: 15px;
+  }
+  
+  
+  /* Estilos do formulário */
+  #userForm {
+    width: 250px;
+    margin: 70px auto;
+  }
+  
+  /* Estilos dos grupos de formulário */
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  
+  /* Estilos das imagens nos grupos de formulário */
+  .form-group img {
+    padding: 7px;
+    background-color: #FFD700;
+    margin-right: 0px;
+    width: 10%;
+    margin-top: -20px;
+    margin-left: 5px;
+  }
+  
+  /* Estilos dos campos de entrada de texto e seleção */
+  input[type='text'],
+  input[type='tel'],
+  input[type='date'],
+  input[type='time'],
+  select,
+  .hora {
+    width: 80%;
+    padding: 12.9px;
+    margin-bottom: 19px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+  
+  #buttonServiços{
+    width: 80%;
+    padding: 12.9px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    position: relative; /* Adicionado para posicionar a imagem */
+  }
+  
+  
+  
+  /* Estilos do botão de agendamento */
+  #confirmarBotao,
+  #submitButton {
+    margin-top: 20px;
+    background-color: #007bff;
+    font-size: 13px;
+    color: white;
+    width: 80%;
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  /* Estilos do botão de redefinição */
+  #resetButton {
+    background-color: #007bff; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branco */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Borda arredondada */
+    width:80%;
+    padding: 13px;
+    font-size: 13px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de apontador */
+    margin-top: 10px; /* Margem superior para separação do botão Agendar */
+  }
+  
+  #submitButton, #resetButton {
+    margin-left: 25px;
+  }
+  
+  
+  
+  
+  
+  
+  /*------------------QUARTA SECTION -------------------------- */
+  
+  
+  .quarta-section {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .quarta-elementos{
+    margin-left: 30px;
+    margin-top: 40px;
+  }
+  
+  .quarta-elementos label{
+    font-size: 20px;
+  }
+  
+  .quarta-elementos .botão{
+    font-size: 20px;
+    width: 70%;
+    height: 10%;
+  }
+  
+  .quarta-section .iphone .screen{
+    background-color: #f2f2f2;
+  }
+  
+  .quarta-section .login-container {
+    background-color: #fff;
+    margin-top: 45%;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+  }
+  
+  .quarta-section .login-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .quarta-section .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .quarta-section .form-group label{
+    display: block;
+    margin-top: -5px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  
+  .quarta-section .form-group input {
+    width: calc(80% - 20px); /* Calcula a largura subtraindo a margem interna */
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+  }
+  
+  .quarta-section .login-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    width: 50%;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .quarta-section .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Centraliza o botão */
+  .quarta-section form {
+    text-align: center;
+  }
+  
+  
+  
+  /*------------------QUINTA SECTION -------------------------- */
+  
+  .quinta-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .quinta-section form {
+  margin-top: 0%;
+  width: 90%;
+  height: 90vh;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quinta-section h1 {
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  }
+  
+  .quinta-section label {
+    font-size: 18px;
+  display: block;
+  margin-top: 10px;
+  }
+  
+  .quinta-section select, button{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  }
+  
+  .quinta-section #NomeSite{
+  width: 80%;
+  padding: 10px;
+  font-size: 15px;
+  }
+
+  
+  .quinta-section button {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  }
+  
+  
+  .quinta-section .serviço-input,
+  .preço-input {
+  margin-bottom: 10px;
+  }
+  
+  .quinta-section .botão {
+  margin-top: 10px;
+  }
+  
+  /* Estilos opcionais */
+  .quinta-section #Selecionar-Serviços-Container {
+  display: none; /* Inicia oculto */
+  position: relative;
+  width: 30%; /* Ajuste conforme necessário */
+  height: 70vh; /* Altura mínima */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  padding: 10px; /* Adiciona espaço interno */
+  margin-top: -30%; /* Espaçamento superior */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+  }
+  
+  .quinta-section h3{
+  margin-top: 50px;
+  }
+  
+  .quinta-section .serviço-input,
+    .quinta-section .preço-input {
+      font-size: 13px;
+        width: 30%; /* Ocupa metade do espaço */
+        margin: 2px;
+        height: 30px; /* Altura dos inputs */
+        margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+    }
+  
+  .quinta-section #adicionar-input-button {
+  position: absolute;
+  width: 20%;
+  border-radius: 5px;
+  top: 0;
+  right: 5px;
+  }
+  
+  .quinta-section #salvar-button{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20%;
+  }
+  
+  .quinta-section #salvar-button:hover{
+  background-color: #0056b3;
+  color: white;
+  }
+  
+  .quinta-section .netlify-app {
+  display: inline-block; /* Para que fique ao lado do input */
+  vertical-align: middle; /* Alinhar verticalmente ao centro */
+  margin-left: 5px; /* Espaçamento à esquerda */
+  font-size: 15px;
+  }
+  
+  .quinta-section button.continuar-button-quinta, button.voltar-button-quinta {
+  width: 50%;
+  font-size: 18px;
+  margin: auto;
+  display: block; /* Para que o botão fique em uma linha separada */
+  margin-top: 15px; /* Espaçamento acima do botão */
+  background-color: #0056b3;
+  color: white;
+  }
+  
+
+
+
+  /*------------------SEXTA SECTION -------------------------- */
+  
+
+  .sexta-section {
+    height: 100vh;
+}
+
+.sexta-section form {
+    margin-top: 70%;
+    width: 90%;
+    height: 230%; /* Ajuste a altura para acomodar todos os inputs */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sexta-section h1 {
+    text-align: center;
+    color: #000;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.sexta-section label {
+    font-size: 15px;
+    display: block;
+    margin-top: -5px;
+}
+
+.sexta-section .Input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.sexta-section button.continuar-button-sexta,
+.sexta-section button.voltar-button-sexta1 {
+    width: 50%;
+    font-size: 18px;
+    margin: auto;
+    display: block;
+    margin-top: 15px;
+    background-color: #0056b3;
+    color: white;
+}
+  }

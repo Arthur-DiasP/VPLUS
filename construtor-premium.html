@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Inclua a biblioteca Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="construtor-premium.css">
+  <title>Construtor Premium</title>
+</head>
+
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+  import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDqmveXa4d2QclGj3HAvRbcwRzQ9NEC2x4",
+    authDomain: "vplay-xxxx.firebaseapp.com",
+    databaseURL: "https://vplay-xxxx-default-rtdb.firebaseio.com",
+    projectId: "vplay-xxxx",
+    storageBucket: "vplay-xxxx.appspot.com",
+    messagingSenderId: "408824533753",
+    appId: "1:408824533753:web:565187862ef38cea758828",
+    measurementId: "G-EWG55E65M1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
+  const storage = getStorage(app);
+
+  // General function to save data
+  function saveData(path, data) {
+    return set(ref(database, path), data)
+      .then(() => {
+        console.log('Data saved successfully!');
+      })
+      .catch((error) => {
+        console.error('Error saving data:', error);
+      });
+  }
+
+  // Upload image to Firebase Storage and get the download URL
+  async function uploadImage(imageFile, folderName) {
+    return new Promise((resolve, reject) => {
+      if (!imageFile) {
+        resolve(''); // No file provided
+      } else {
+        const storageReference = storageRef(storage, `${folderName}/images/${imageFile.name}`);
+        uploadBytes(storageReference, imageFile)
+          .then((snapshot) => getDownloadURL(snapshot.ref))
+          .then((downloadURL) => resolve(downloadURL))
+          .catch((error) => reject(error));
+      }
+    });
+  }
+
+  // Section 1: Save customization data
+  async function saveSection1Data(folderName) {
+    const logoColor = document.getElementById('bg-color').value || '';
+    const buttonBgColor = document.getElementById('white-color').value || '';
+    const buttonColor = document.getElementById('btn-color').value || '';
+    const navbarColor = document.getElementById('navbar-color').value || '';
+    const logoFile = document.getElementById('logo').files[0];
+    const logoURL = await uploadImage(logoFile, folderName);
+
+    return {
+      logoColor,
+      buttonBgColor,
+      buttonColor,
+      navbarColor,
+      logoURL
+    };
+  }
+
+  // Section 2: Save image and color data
+  async function saveSection2Data(folderName) {
+    const image1 = document.getElementById('primeira-imagem').files[0];
+    const image2 = document.getElementById('segunda-imagem').files[0];
+    const image3 = document.getElementById('terceira-imagem').files[0];
+    const image4 = document.getElementById('quarta-imagem').files[0];
+    const image5 = document.getElementById('quinta-imagem').files[0];
+    const image6 = document.getElementById('sexta-imagem').files[0];
+    const bgColor = document.getElementById('cf-color').value || '';
+    const textColor = document.getElementById('ct-color').value || '';
+    const buttonColor = document.getElementById('cb-color').value || '';
+
+    const image1URL = await uploadImage(image1, folderName);
+    const image2URL = await uploadImage(image2, folderName);
+    const image3URL = await uploadImage(image3, folderName);
+    const image4URL = await uploadImage(image4, folderName);
+    const image5URL = await uploadImage(image5, folderName);
+    const image6URL = await uploadImage(image6, folderName);
+
+    return {
+      image1: image1URL,
+      image2: image2URL,
+      image3: image1URL,
+      image4: image2URL,
+      image5: image1URL,
+      image6: image2URL,
+      bgColor,
+      textColor,
+      buttonColor
+    };
+  }
+
+  // Section 3: Save site type and color data
+  function saveSection3Data() {
+    const siteType = document.getElementById('tipo-de-site').value || '';
+    const bgColor = document.getElementById('cfg-color').value || '';
+    const imageBgColor = document.getElementById('caa-color').value || '';
+    const buttonColor = document.getElementById('cbt-color').value || '';
+
+    return {
+      siteType,
+      bgColor,
+      imageBgColor,
+      buttonColor
+    };
+  }
+
+  // Section 4: Save background and text color data
+  function saveSection4Data() {
+    const bgColor = document.getElementById('www-color').value || '';
+    const elementBgColor = document.getElementById('aaa-color').value || '';
+    const titleColor = document.getElementById('bbb-color').value || '';
+    const textColor = document.getElementById('ccc-color').value || '';
+    const buttonColor = document.getElementById('ddd-color').value || '';
+
+    return {
+      bgColor,
+      elementBgColor,
+      titleColor,
+      textColor,
+      buttonColor
+    };
+  }
+
+  // Section 5: Save form data
+  function saveSection5Data() {
+    const service = document.getElementById('selecionar').value;
+    const weeks = document.getElementById('semanas').value;
+    const hours = document.getElementById('horas').value;
+    const siteName = document.getElementById('NomeSite').value;
+
+    // Obter dados de todos os inputs de serviço e preço
+    const serviceInputs = document.querySelectorAll('.serviço-input');
+    const priceInputs = document.querySelectorAll('.preço-input');
+
+    // Mapear os dados dos inputs para um array de objetos
+    const servicesAndPrices = Array.from(serviceInputs).map((input, index) => ({
+      serviço: input.value,
+      preço: priceInputs[index].value
+    }));
+
+    return {
+      service,
+      weeks,
+      hours,
+      siteName,
+      serviçosEPrecos: servicesAndPrices // Adicionando os serviços e preços à estrutura de dados retornada
+    };
+  }
+
+  // Section 6: Save account data
+  function saveSection6Data() {
+    const NomeUsuário = document.querySelectorAll('.Input')[0].value;
+    const userPassword = document.querySelectorAll('.Input')[1].value;
+    const employeeAccount1 = document.querySelectorAll('.Input')[2].value;
+    const employeePassword1 = document.querySelectorAll('.Input')[3].value;
+    const employeeAccount2 = document.querySelectorAll('.Input')[4].value;
+    const employeePassword2 = document.querySelectorAll('.Input')[5].value;
+    const employeeAccount3 = document.querySelectorAll('.Input')[6].value;
+    const employeePassword3 = document.querySelectorAll('.Input')[7].value;
+    const employeeAccount4 = document.querySelectorAll('.Input')[8].value;
+    const employeePassword4 = document.querySelectorAll('.Input')[9].value;
+    const employeeAccount5 = document.querySelectorAll('.Input')[10].value;
+    const employeePassword5 = document.querySelectorAll('.Input')[11].value;
+    const employeeAccount6 = document.querySelectorAll('.Input')[12].value;
+    const employeePassword6 = document.querySelectorAll('.Input')[13].value;
+
+    return {
+      NomeUsuário,
+      userPassword,
+      employeeAccount1,
+      employeePassword1,
+      employeeAccount2,
+      employeePassword2,
+      employeeAccount3,
+      employeePassword3,
+      employeeAccount4,
+      employeePassword4,
+      employeeAccount5,
+      employeePassword5,
+      employeeAccount6,
+      employeePassword6,
+    };
+  }
+
+  // Save all sections data
+  async function saveAllData() {
+    const NomeUsuário = document.querySelector('#NomeUsuário').value;
+    const allData = {
+      section1: await saveSection1Data(NomeUsuário),
+      section2: await saveSection2Data(NomeUsuário),
+      section3: saveSection3Data(),
+      section4: saveSection4Data(),
+      section5: saveSection5Data(),
+      section6: saveSection6Data()
+    };
+
+    return saveData(`Clientes/${NomeUsuário}`, allData);
+  }
+
+  // Function to show notification and redirect
+  function showNotificationAndRedirect() {
+    alert('Seu site ficará pronto em até 5 horas! Receba o link no seu e-mail e whatsapp para acessá-lo de qualquer lugar.');
+    if (confirm('Deseja ser redirecionado para a página de pagamento?')) {
+      window.location.href = "https://buy.stripe.com/bIY7tXehE6OF7ccbIL";
+    }
+  }
+
+  // Event listener for the submit button
+  document.querySelector('.continuar-button-sexta').addEventListener('click', async (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Verificar se as imagens obrigatórias estão preenchidas
+    const mandatoryImageInputs = document.querySelectorAll('#primeira-imagem, #segunda-imagem, #terceira-imagem');
+    let allImagesFilled = true;
+    mandatoryImageInputs.forEach(input => {
+      if (!input.files[0]) {
+        allImagesFilled = false;
+        return; // Exit loop if any mandatory image is missing
+      }
+    });
+
+    if (!allImagesFilled) {
+      alert("Por favor, faça o upload pelo menos das 4 imagens obrigatórias antes de prosseguir.");
+      return; // Exit function if mandatory images are missing
+    }
+
+    // Save data
+    await saveAllData();
+
+    // Show notification and redirect after 2 seconds
+    setTimeout(showNotificationAndRedirect, 2000);
+  });
+</script>
+
+
+
+
+
+
+<body>
+
+<!--------------- Primeira Nova Section ----------------------->
+
+<section class="primeira-section">
+  <div class="container">
+    <div class="left-div">
+      <div class="primeiros-elementos">
+        <label for="logo">Escolher uma imagem para o logo:</label>
+        <input type="file" id="logo" accept="image/*" onchange="mudarLogo()">
+      
+        <label for="bg-color">Cor de Fundo:</label>
+        <input type="color" id="bg-color" class="color-input" oninput="mudarCoresFundo()">
+      
+        <label for="white-color">Cor de Fundo dos Botões:</label>
+        <input type="color" id="white-color" class="color-input" oninput="mudarCoresFundoBotões()">
+      
+        <label for="btn-color">Cor dos Botões:</label>
+        <input type="color" id="btn-color" class="color-input" oninput="mudarCoresBotões()">
+      
+        <label for="navbar-color">Cor da Navbar:</label>
+        <input type="color" id="navbar-color" class="color-input" oninput="mudarCoresNavbar()">
+
+
+        <!-- Botão Próximo com função para rolar -->
+      <button class="botão" id="btnProximo" onclick="rolarParaSegundaSection()">Próximo</button>
+      </div>
+    </div>
+      
+
+
+    <div class="right-div">
+      <div class="iphone">
+        <div class="front-camera"></div>
+        <div class="speaker"></div>
+        <div class="home-button"></div>
+        <div class="screen">
+          <div class="screen-content">
+            <div class="black-section">
+        <!-- Sua imagem do logo aqui -->
+        <img src="LOGO VPLUS.png" alt="Logo">
+    </div>
+    <div class="white-section">
+        <div class="conteiner">
+            <!-- Conteúdo da seção branca aqui -->
+            <a href="login.html" class="barbeiro-button">BARBEIRO</a>
+            <a href="selecionar.html" class="cliente-button">CLIENTE</a>
+        </div>
+    </div>
+
+    <!-- Barra de navegação (navbar) -->
+    <div class="navbar">
+        <a href="#" id="Início">
+            <i class="material-icons">person_search</i>
+            Consultar
+        </a>
+        <a href="#"><!-- Instagram da Barbearia -->
+            <i class="material-icons">explore</i>
+            Explorar
+        </a>
+        <a href="#">
+            <i class="material-icons">savings</i>
+            Investimentos
+        </a>
+    </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Segunda Nova Section ---------------------------------------->
+<section class="segunda-section">
+    <div class="container">
+        <div class="left-div">
+          <div class="segundo-elementos">
+            <label for="primeira-imagem">Escolha a primeira imagem:</label>
+            <input type="file" id="primeira-imagem" accept="image/*">
+            
+            <!-- Input para escolher uma segunda imagem -->
+            <label for="segunda-imagem">Escolha a segunda imagem:</label>
+            <input type="file" id="segunda-imagem" accept="image/*">
+            
+            <label for="terceira-imagem">Escolha a terceira imagem:</label>
+            <input type="file" id="terceira-imagem" accept="image/*">
+            
+            <!-- Input para escolher uma segunda imagem -->
+            <label for="quarta-imagem">Escolha a quarta imagem:</label>
+            <input type="file" id="quarta-imagem" accept="image/*">
+            
+            <label for="quinta-imagem">Escolha a quinta imagem:</label>
+            <input type="file" id="quinta-imagem" accept="image/*">
+            
+            <!-- Input para escolher uma segunda imagem -->
+            <label for="sexta-imagem">Escolha a sexta imagem:</label>
+            <input type="file" id="sexta-imagem" accept="image/*">
+            
+
+        
+          <label for="bg-color">Cor de Fundo:</label>
+          <input type="color" id="cf-color" class="color-input" oninput="mudarCorDeFundo()">
+
+          <label for="bg-color">Cor de Texto:</label>
+          <input type="color" id="ct-color" class="color-input" oninput="mudarCorTexto()">
+        
+          <label for="btn-color">Cor do Botão:</label>
+          <input type="color" id="cb-color" class="color-input" oninput="mudarCorBotao()">
+        
+              <!-- Botão Anterior -->
+              <button class="botão" onclick="rolarParaPrimeiraSection()">Anterior</button>
+    
+              <!-- Botão Próximo -->
+              <button class="botão" onclick="rolarParaTerceiraSection()">Próximo</button>
+       
+          </div>
+        </div>
+          
+    
+        <div class="right-div">
+          <div class="iphone">
+            <div class="front-camera"></div>
+            <div class="speaker"></div>
+            <div class="home-button"></div>
+            <div class="screen">
+              <div class="screen-content">
+                <h1>SELECIONE:</h1>
+                <div class="circle-container">
+
+                  <div class="column">
+                      <div class="circle" id="imagem1">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/90/70/a9/9070a91b4f4138710725d41e158a1bf6.jpg" alt="Imagem 1">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                      <div class="circle" id="imagem3">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/90/70/a9/9070a91b4f4138710725d41e158a1bf6.jpg" alt="Imagem 3">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                      <div class="circle" id="imagem5">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/90/70/a9/9070a91b4f4138710725d41e158a1bf6.jpg" alt="Imagem 5">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                  </div>
+
+
+              
+                  <div class="column">
+                      <div class="circle" id="imagem2">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/b7/c5/00/b7c500160e048c54f8efec64cdb5c3d6.jpg" alt="Imagem 2">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                      <div class="circle" id="imagem4">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/b7/c5/00/b7c500160e048c54f8efec64cdb5c3d6.jpg" alt="Imagem 4">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                      <div class="circle" id="imagem6">
+                          <a href="">
+                              <img src="https://i.pinimg.com/originals/b7/c5/00/b7c500160e048c54f8efec64cdb5c3d6.jpg" alt="Imagem 6">
+                          </a>
+                          <div class="rating"><i class="material-symbols-outlined">hotel_class</i>4.9</div>
+                      </div>
+                  </div>
+              </div>
+              
+
+
+    <div class="button-container">
+        <a class='button' href='#'>VOLTAR</a>
+    </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+<!-- Terceira Nova Section ------------------------------------- -->
+
+<section class="terceira-section">
+  <div class="container">
+    <div class="left-div">
+      <div class="terceiro-elementos">
+      <!-- Novo conteúdo -->
+      <label for="tipo-de-site">Tipo de Site:</label>
+      <select id="tipo-de-site" onchange="alterarImagens()">
+        <option value="Barbearia">Barbearia</option>
+        <option value="Beleza">Beleza</option>
+        <option value="Clínica">Clínica</option>
+      </select>
+      
+        <label for="cfg-color">Cor de Fundo:</label>
+        <input type="color" id="cfg-color" class="color-input" oninput="mudarCorFundoTerceira()">
+
+        <label for="caa-color">Cor de Fundo das Imagens:</label>
+        <input type="color" id="caa-color" class="color-input" oninput="mudarCorFundoImagensTerceira()">
+      
+        <label for="cbt-color">Cor dos Botões:</label>
+        <input type="color" id="cbt-color" class="color-input" oninput="mudarCorBotõesTerceira()">
+
+         <!-- Botão Anterior -->
+         <button class="botão" onclick="rolarParaSegundaSection()">Anterior</button>
+
+         <!-- Botão Próximo -->
+         <button class="botão" onclick="rolarParaQuartaSection()">Próximo</button>
+
+      </div>
+    </div>  
+
+
+    <div class="right-div">
+      <div class="iphone">
+        <div class="front-camera"></div>
+        <div class="speaker"></div>
+        <div class="home-button"></div>
+        <div class="screen">
+          <div class="screen-content">
+            <form id="userForm">
+              <div class="form-group">
+                <img id="imagem1" class="itens" src="https://cdn-icons-png.flaticon.com/128/1802/1802292.png" alt="Nome">
+                <input type="text" id="nome" name="nome" placeholder="NOME OU APELIDO" required>
+              </div>
+          
+              <div class="form-group">
+                <img id="imagem2" class="itens" src="https://cdn-icons-png.flaticon.com/128/1384/1384023.png" alt="Telefone">
+                <input type="tel" id="telefone" name="telefone" placeholder="TELEFONE" required>
+              </div>
+          
+              <div class="form-group">
+                <img id="imagem3" class="itens" src="https://cdn-icons-png.flaticon.com/128/5672/5672465.png" alt="Serviços">
+                <!-- Botão -->
+                <button id="buttonServiços">SERVIÇOS</button>
+          
+                <!-- Contêiner -->
+                <div id="ServiçosConteiner">
+                  <label>
+                    <input class="Itens-Serviços" type="checkbox" name="Corte" value="30"> Corte - R$ 30,00
+                  </label><br>
+                  <label>
+                    <input class="Itens-Serviços" type="checkbox" name="Barba" value="20"> Barba - R$ 20,00
+                  </label><br>
+                  <label>
+                    <input class="Itens-Serviços" type="checkbox" name="Sobrancelha" value="10"> Sobrancelha - R$ 10,00
+                  </label><br>
+                  <label>
+                    <input class="Itens-Serviços" type="checkbox" name="Penteado" value="25"> Penteado - R$ 25,00
+                  </label><br>
+                  <div id="valorTotal">
+                    Valor: R$ <span id="total">0.00</span>
+                  </div>
+                  <button id="confirmarBotao">Confirmar</button>
+                </div>
+              </div>
+          
+              <div class="form-group">
+                <img id="imagem4" class="itens" src="https://cdn-icons-png.flaticon.com/128/8299/8299807.png" alt="Data">
+                <input type="text" id="data" name="data" placeholder="DATA" required>
+              </div>
+          
+              <div class="form-group">
+                <img id="imagem5" class="itens" src="https://cdn-icons-png.flaticon.com/128/55/55256.png" alt="Hora">
+                <select class="hora" id="hora" name="hora" required oninvalid="this.setCustomValidity('Por favor, selecione uma hora.')">
+                  <option style="text-align: center;" value="">HORA</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                </select>
+              </div>
+
+              <div class="submit-resetButton">
+              <button class="botão-terceira" id="submitButton" type="button">Agendar</button>
+              <button class="botão-terceira" id="resetButton">Redefinir</button>
+            </div>
+            </form>
+          
+          </div>
+</section>
+
+
+
+<!-------------------------------------------------------------------->
+
+
+
+
+<!------------- Quarta Section ------------------------------------>
+
+
+<section class="quarta-section">
+  <div class="container">
+    <div class="left-div">
+      <div class="quarta-elementos">
+        <label for="www-color">Cor de Fundo:</label>
+        <input type="color" id="www-color" class="color-input" oninput="mudarCorFundoQuarta()">
+
+        <label for="aaa-color">Cor de Fundo dos Elementos:</label>
+        <input type="color" id="aaa-color" class="color-input" oninput="mudarCorFundoElementosQuarta()">
+
+        <label for="bbb-color">Cor do Título:</label>
+        <input type="color" id="bbb-color" class="color-input" oninput="mudarCorTítuloQuarta()">
+
+        <label for="ccc-color">Cor do Texto:</label>
+        <input type="color" id="ccc-color" class="color-input" oninput="mudarCorTextoQuarta()">
+      
+        <label for="ddd-color">Cor do Botão:</label>
+        <input type="color" id="ddd-color" class="color-input" oninput="mudarCorBotãoQuarta()">
+      
+
+         <!-- Botão Anterior -->
+         <button class="botão" onclick="rolarParaTerceiraSection()">Anterior</button>
+
+         <!-- Botão Próximo -->
+         <button class="botão" onclick="rolarParaQuintaSection()">Próximo</button>
+
+      </div>
+    </div>
+
+
+    <div class="right-div">
+      <div class="iphone">
+        <div class="front-camera"></div>
+        <div class="speaker"></div>
+        <div class="home-button"></div>
+        <div class="screen">
+          <div class="screen-content">
+            <div class="login-container">
+              <h2>EQUIPE BARBEARIA</h2>
+              <form onsubmit="validarCredenciais(event)">
+                  <div class="form-group">
+                      <label id="TextoLabel" for="login">Login:</label>
+                      <input type="text" id="login" name="login" required>
+                  </div>
+                  <div class="form-group">
+                      <label id="TextoLabel" for="senha">Senha:</label>
+                      <input type="password" id="senha" name="senha" required>
+                  </div>
+                  <button type="submit" class="login-button">ENTRAR</button>
+              </form>
+          </div>      
+          </div>
+</section>
+
+
+<!-------------------------------------------------------------------->
+
+
+
+<!------------- Quinta Section ------------------------------------>
+
+
+<section class="quinta-section">
+  <form>
+      <h1>Dados</h1>
+      <label for="servico">Serviço:</label>
+      <button type="button" id="selecionar" onclick="toggleSelecionarContainer()">Selecionar</button>
+
+      <label for="semanas">Semanas Trabalhadas:</label>
+      <select id="semanas">
+          <option value="seg-sex">Segunda à Sexta</option>
+          <option value="seg-sab">Segunda à Sábado</option>
+          <option value="ter-sab">Terça à Sábado</option>
+          <option value="ter-dom">Terça à Domingo</option>
+          <!-- Mais opções de semanas -->
+      </select>
+
+      <label for="horas">Horas Trabalhadas:</label>
+      <select id="horas">
+          <option value="8h - 18h">8h - 18h</option>
+          <option value="9h - 18h">9h - 18h</option>
+          <option value="10h - 18h">10h - 18h</option>
+          <option value="8h - 20h">8h - 20h</option>
+          <option value="9h - 20h">9h - 20h</option>
+          <option value="10h - 20h">10h - 20h</option>
+          <option value="8h - 22h">8h - 22h</option>
+          <option value="9h - 22h">9h - 22h</option>
+          <option value="10h - 22h">10h - 22h</option>
+          <!-- Mais opções de horas -->
+      </select>
+
+      <label for="nomeSite">Nome do Site:</label>
+      <input type="text" id="NomeSite" placeholder="Nome do Site" oninput="validarInput(this)">
+
+    <p class="netlify-app">.netlify.app</p>
+
+    <div class="button-quinta">
+    <button type="button" onclick="rolarParaQuartaSection()" class="voltar-button-quinta">Voltar</button>
+    <button type="button" onclick="rolarParaSextaSection()" class="continuar-button-quinta">Continuar</button>
+    </div>
+
+  </form>
+
+
+  <div id="Selecionar-Serviços-Container">
+    <h3>Adicione Serviços e Preços</h3>
+    <input type="text" class="serviço-input" placeholder="Serviço" oninput="validarEntradaServico(this)">
+    <input type="text" class="preço-input" placeholder="Preço" oninput="validarEntradaPreco(this)">
+    <br>
+    <input type="text" class="serviço-input" placeholder="Serviço" oninput="validarEntradaServico(this)">
+    <input type="text" class="preço-input" placeholder="Preço" oninput="validarEntradaPreco(this)">
+    <br>
+    <button id="adicionar-input-button" onclick="adicionarInputText()"><i class="fa fa-plus"></i></button>
+    <button id="salvar-button" class="botão" onclick="salvarServiços()">Salvar</button>
+  </div>
+</section>
+
+
+<!------------- Sexta Section ------------------------------------>
+
+<section class="sexta-section">
+  <form>
+    <h1>Criar Contas</h1>
+   <label for="Sua Conta">Sua Conta:</label>
+   <input id="NomeUsuário" class="Input" type="text" placeholder="Nome">
+
+    <label for="senha">Sua Senha:</label>
+    <input class="Input" type="text" placeholder="Senha">
+
+    <label for="Sua Conta">Conta do Funcionário 1:</label>
+   <input class="Input" type="text" placeholder="Nome">
+
+    <label for="senha">Senha do Funcionário 1:</label>
+    <input class="Input" type="text" placeholder="Senha">
+
+    <label for="Sua Conta">Conta do Funcionário 2:</label>
+   <input class="Input" type="text" placeholder="Nome">
+
+    <label for="senha">Senha do Funcionário 2:</label>
+    <input class="Input" type="text" placeholder="Senha">
+
+    <label for="Sua Conta">Conta do Funcionário 3:</label>
+   <input class="Input" type="text" placeholder="Nome">
+
+    <label for="senha">Senha do Funcionário 3:</label>
+    <input class="Input" type="text" placeholder="Senha">
+   
+    <label for="Sua Conta">Conta do Funcionário 4:</label>
+    <input class="Input" type="text" placeholder="Nome">
+ 
+     <label for="senha">Senha do Funcionário 4:</label>
+     <input class="Input" type="text" placeholder="Senha">
+ 
+     <label for="Sua Conta">Conta do Funcionário 5:</label>
+    <input class="Input" type="text" placeholder="Nome">
+ 
+     <label for="senha">Senha do Funcionário 5:</label>
+     <input class="Input" type="text" placeholder="Senha">
+ 
+     <label for="Sua Conta">Conta do Funcionário 6:</label>
+    <input class="Input" type="text" placeholder="Nome">
+ 
+     <label for="senha">Senha do Funcionário 6:</label>
+     <input class="Input" type="text" placeholder="Senha">
+    
+
+
+
+  <button type="button" onclick="rolarParaQuintaSection()" class="voltar-button-sexta1">Voltar</button>
+  <button type="button" class="continuar-button-sexta">Concluido</button>
+
+</form>
+
+</section>
+
+
+
+<!---------------------------------------------------------------------------------->
+
+
+
+<div id="notificação1">
+ <h1>Gire seu dispositivo para o modo paisagem para uma melhor experiência.</h1>
+</div>
+
+
+
+
+
+<script>
+  function checkOrientation() {
+    if (window.innerWidth < 340 && window.innerHeight > window.innerWidth) {
+      document.getElementById('notificação1').style.display = 'block';
+    } else {
+      document.getElementById('notificação1').style.display = 'none';
+    }
+  }
+
+  function removeNotificationOnLandscape() {
+    if (window.innerWidth >= 340 || window.innerHeight <= window.innerWidth) {
+      document.getElementById('notificação1').style.display = 'none';
+    }
+  }
+
+  // Check orientation initially and on resize
+  checkOrientation();
+  window.addEventListener('resize', checkOrientation);
+
+  // Check orientation change
+  window.addEventListener('orientationchange', removeNotificationOnLandscape);
+</script>
+
+
+<script src="construtor-premium.js"></script>  
+
+
+  
+</body>
+</html>

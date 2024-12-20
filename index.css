@@ -1,0 +1,4433 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* A animação começa com o fundo preto e o logo centralizado */
+.inicio-animação {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; /* Fundo preto */
+  overflow: hidden; /* Garante que nada ultrapasse os limites da tela */
+  position: relative;
+}
+
+.logo-inicio {
+  animation: efeitoDesvanecer 4s forwards; /* Aplica apenas o efeito de desvanecimento */
+  width: 70%; /* O logo começa com 70% de largura */
+}
+
+@keyframes efeitoDesvanecer {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Degradê do centro */
+  }
+}
+
+.inicio-conteúdo {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Transição suave ao mostrar o conteúdo */
+}
+
+
+
+
+header {
+  background-color: black;
+  color: white;
+  padding: 1px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.title {
+  margin-left: -18%; /* Adicionando margem à esquerda do h1 */
+  font-size: 30px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centralizando o texto na lista */
+}
+
+.menu li {
+  display: inline;
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  background-color: #0d6ede;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: Satoshi, sans-serif;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: #0b56ac;
+}
+
+/* Estilo para o sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 9999; /* Sobrepor acima de todo o conteúdo */
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.sidebar .button{
+  color: white;
+  margin-top: 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+ /* Estilo para o ícone de fechar */
+ #close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  padding: 0px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.section p {
+  margin-bottom: 40px;
+}
+
+
+
+
+/*----------- Início -------------------------------*/
+
+#inicio h2,
+#inicio p {
+text-align: left;
+margin-left: 50px;
+}
+
+#inicio h2{
+margin-top: -60px;
+font-size: 55px;
+width: 50%;
+}
+
+.AGENDA-AZUL{
+  background-color: #0d6ede;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+#inicio p{
+font-size: 30px;
+width: 50%;
+}
+
+.create-site-button {
+position: absolute;
+left: 50px;
+bottom: 40px; /* Posicionando o botão na parte inferior da seção */
+background-color: #0d6ede;
+color: white;
+padding: 15px 60px;
+font-weight: bold;
+font-size: 18px;
+border: none;
+border-radius: 5px;
+display: flex;
+align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+}
+
+#create-site-button i {
+margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+}
+
+.create-site-button:hover{
+background-color: #0b56ac;
+cursor: pointer;
+}
+
+.section-image {
+position: absolute;
+right: 0px;
+bottom: 30px;
+width: 45%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+}
+
+
+
+/*--------------------------------------------------------------------------------------- */
+
+
+/*-------- Funcionalidades --------------------*/
+
+
+.section-divider-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 1vh; /* Espaçamento entre o botão e o hr/p */
+margin-bottom: -10px;
+}
+
+.section-divider {
+width: 50%;
+border: 1px solid #0d6ede; /* Cor da linha */
+}
+
+.section-text {
+font-size: 20px;
+color: #555; /* Cor do texto */
+}
+
+
+.card {
+background-color: black;
+color: white;
+display: flex;
+align-items: center;
+border-radius: 10px;
+height: 75vh;
+margin: 20px;
+}
+
+.card-image {
+width: 30%;
+height: auto;
+}
+
+.card-content {
+margin-left: 20%;
+}
+
+.card-content h2{
+font-family: Satoshi, sans-serif;
+font-size: 40px;
+margin-top: 0vh;
+width: 90%;
+margin: auto;
+margin-bottom: 10vh;
+text-align: left;
+}
+
+.icon-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+}
+
+.icon {
+flex-basis: 45%; /* Largura de cada ícone */
+display: flex;
+align-items: center;
+}
+
+.icon i {
+margin-right: 10px;
+background-color: #0d6ede;
+padding: 10px;
+border-radius: 10px;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* SEGUNDA-FUNCIONALIDADES */
+
+
+
+#segunda-funcionalidades .card-container {
+  display: flex;
+  justify-content: space-between; /* Para distribuir os cards ao longo do espaço disponível */
+}
+
+#segunda-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 50%; /* Defina a largura desejada para os cards */
+  display: flex; /* Adicionando flex para alinhar itens verticalmente */
+  flex-direction: column; /* Alinhar itens verticalmente */
+  justify-content: center; /* Centralizar itens verticalmente */
+  align-items: center; /* Centralizar itens horizontalmente */
+}
+
+#card-cinza{
+  background-color: #f5f5f7;
+  color: black;
+}
+
+#card-cinza button{
+  background-color: #f5f5f7;
+}
+
+#card-preto button{
+  background-color: black;
+  color: white;
+}
+
+#card-cinza button:hover{
+  color: white;
+}
+
+#segunda-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#segunda-funcionalidades h2 {
+  text-align: center;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#segunda-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#segunda-funcionalidades button {
+  border: 2px solid #0056b3; /* Adicionando uma borda azul */
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#segunda-funcionalidades button:hover {
+  background-color: #0056b3;
+}
+
+#segunda-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.Site{
+  width: 35%;
+}
+
+.Oculto{
+  width: 70%;
+}
+
+
+
+
+/*-----------------------------------------------------------------------*/
+
+/* TERCEIRA-FUNCIONALIDADES */
+
+
+
+#terceira-funcionalidades .card-container {
+  display: flex;
+  justify-content: space-between; /* Para distribuir os cards ao longo do espaço disponível */
+}
+
+#terceira-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 50%; /* Defina a largura desejada para os cards */
+  display: flex; /* Adicionando flex para alinhar itens verticalmente */
+  flex-direction: column; /* Alinhar itens verticalmente */
+  justify-content: center; /* Centralizar itens verticalmente */
+  align-items: center; /* Centralizar itens horizontalmente */
+}
+
+#terceira-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#terceira-funcionalidades h2 {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#terceira-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#terceira-funcionalidades button {
+  border: 2px solid #0056b3; /* Adicionando uma borda azul */
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+#terceira-funcionalidades button:hover {
+  background-color: #0056b3;
+}
+
+#terceira-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+
+
+/*--------------- QR CODE ----------------------------------------- */
+
+
+#QRCODE{
+  width: 20%;
+  margin-left: 40px;
+  border-radius: 10px;
+}
+
+
+#section-divider-linha{
+  width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+
+#h3-informação{
+  color: #ddd;
+  width: 90%;
+  font-size: 23px;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+  cursor: pointer;
+}
+
+
+/*--------------------------------------------------------------------- */
+
+
+
+
+/*--------------- Planos ----------------------------------------- */
+
+#planos {
+  height: 190vh;
+}
+
+#planos h2{
+  font-size: 40px;
+  margin-top: -5%;
+  margin-bottom: 10px;
+}
+
+#planos .sub{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.selecionar-planos {
+  background-color:black;
+  display: flex;
+  justify-content: space-around;
+  padding: 1px 0;
+  width: 40%;
+  z-index: 1;
+  border-radius: 50px;
+  margin: 30px auto;
+  margin-bottom: 40px;
+}
+
+.selecionar-planos a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  cursor: pointer;
+}
+
+.selecionar-planos a:hover {
+  background-color: #333;
+  border-radius: 30px;
+}
+
+.selecionar-planos a.selecionado {
+  background-color: #333;
+  border-radius: 30px;
+}
+
+.plan-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan-card {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 15px;
+  width: 30%;
+  display: flex; /* Adicionando display flex para alinhar verticalmente */
+  flex-direction: column; /* Alinhando os itens verticalmente */
+  justify-content: center; /* Centralizando verticalmente */
+  text-align: center; /* Centralizando horizontalmente */
+}
+
+.plan-card .Plano {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  margin-bottom: 10px;
+}
+
+#planos .valor-x{
+  font-size: 25px;
+}
+
+.plan-card p.description {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinhando à esquerda */
+}
+
+.plan-card p.description i {
+  margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+  background-color: #0d6ede;
+  padding: 2px;
+  border-radius: 50px;
+  color: white;
+}
+
+.subscribe-button {
+  background-color: #0d6ede;
+  color: white;
+  font-size: 18px;
+ width: 50%;
+ padding: 10px;
+ margin: auto;
+ margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: #0b56ac;
+}
+
+
+/*----------------------------------------------------------------------- */
+
+
+/* ------------- Ajuda --------------------------------------------------------------*/
+
+/* Estilo para a seção de ajuda */
+#ajuda {
+  height: 130vh; /* Altura ajustada para o conteúdo do card */
+}
+
+.left-card {
+  float: left;
+  width: 50%; /* Ajuste conforme necessário */
+  margin-right: 5%; /* Espaçamento entre os cards */
+}
+
+.left-card h2{
+  font-size: 40px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.left-card p{
+  font-size: 20px;
+  text-align: left;
+}
+
+.left-card button{
+  background-color: #0d6ede;
+  color: white;
+  padding: 10px 60px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  float: left;
+}
+
+.left-card button:hover{
+  background-color: #0b56ac;
+  cursor: pointer;
+}
+
+.right-card {
+  text-align: left;
+  float: right;
+  width: 50%; /* Ajuste conforme necessário */
+  margin-left: 20%; /* Espaçamento entre os cards */
+}
+
+.right-card p{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.pergunta{
+  cursor: pointer;
+}
+
+.resposta {
+  background-color: #0d6ede;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+}
+
+/*---------------------------------------------------------- */
+
+
+/*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 110vh;
+}
+
+#patrocinadores h2{
+  text-align: left;
+  margin-left: 40px;
+  font-size: 40px;
+  margin-top: 5%;
+  margin-bottom: 10px;
+}
+
+
+.card-patrocinadores {
+  background: black;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  height: 55vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .card-patrocinadores img {
+    margin:10px auto;
+    max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+    border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+  }
+
+
+
+
+/*------------------------------------------------------------------------- */
+
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content p {
+  margin: 10px 0;
+}
+
+.footer-content a {
+  color: #1DA1F2;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+/*-----------------------------------------------------------------------*/
+
+
+
+
+/* Para 340px */
+@media only screen and (max-width: 340px) {
+  
+  .title {
+    margin-left: -20%; /* Adicionando margem à esquerda do h1 */
+    font-size: 30px;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 130vh;
+  }
+
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p,
+  .create-site-button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+  font-size: 30px;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  width: 80%;
+  }
+  
+  
+  #inicio p{
+  font-size: 20px;
+  width: 80%;
+  margin-bottom: 40%;
+  }
+  
+  .create-site-button {
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+    justify-content: center; /* Centralizando horizontalmente */
+    text-align: center; /* Garantindo que o texto esteja centralizado */
+  }
+  
+  
+  #create-site-button i {
+  margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+  }
+
+  
+  .section-image {
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  bottom: -240px;
+  width: 100%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+  }
+  
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+
+  #funcionalidades{
+  height: 190vh;
+  }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 18px;
+  }
+  
+  
+  .card {
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 95vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 70%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  
+  .icon-container {
+    padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 10px;
+  }
+
+
+
+  /* SEGUNDA-FUNCIONALIDADES */
+
+#segunda-funcionalidades{
+  height: 220vh;
+}
+
+#segunda-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#segunda-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 75%; /* Defina a largura desejada para os cards */
+}
+
+
+#segunda-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#segunda-funcionalidades h2 {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#segunda-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#segunda-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#segunda-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.Site{
+  width: 45%;
+}
+
+.Oculto{
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* TERCEIRA-FUNCIONALIDADES */
+
+#terceira-funcionalidades{
+  height: 220vh;
+}
+
+#terceira-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#terceira-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 75%; /* Defina a largura desejada para os cards */
+}
+
+#terceira-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#terceira-funcionalidades h2 {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#terceira-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#terceira-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#terceira-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+  
+  
+  /*-----------------------------------------------------------------------*/
+  
+
+  /*--------------- QR CODE ----------------------------------------- */
+
+
+  #funcionalidades-qr{
+    height: 140vh;
+    }
+
+    .card {
+      display: block;
+      align-items: center;
+      border-radius: 10px;
+      height: 95vh;
+      margin: 20px;
+      }
+    
+    .section-divider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+    margin-bottom: -10px;
+    }
+    
+    .section-divider {
+    width: 50%;
+    }
+    
+    .section-text {
+    font-size: 18px;
+    }
+  
+#section-divider-linha{
+  width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+#QRCODE{
+  width: 35%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+
+#h3-informação{
+  width: 90%;
+  font-size: 15px;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+  cursor: pointer;
+}
+
+
+
+
+
+  
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 450vh;
+  }
+  
+  #planos h2{
+    font-size: 30px;
+    margin-top: 5%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 25px;
+  }
+  
+  .plan-card p.description {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 18px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 150vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-right: 5%; /* Espaçamento entre os cards */
+    margin-top: 120px;
+  }
+  
+  .left-card h2{
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+
+
+
+  /*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 120vh;
+}
+
+#patrocinadores h2{
+  text-align: center;
+  margin: auto;
+  font-size: 30px;
+  margin-top: 15%;
+  margin-bottom: 10px;
+}
+
+
+.card-patrocinadores {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  border-radius: 10px;
+  height: 75vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-patrocinadores img {
+  margin: -30px 0; /* Espaçamento entre as imagens */
+  max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+  border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+}
+
+  
+}
+
+/* Para 390px */
+@media only screen and (min-width: 341px) and (max-width: 390px) {
+  .title {
+    margin-left: -36%; /* Adicionando margem à esquerda do h1 */
+    font-size: 30px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizando o texto na lista */
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 110vh;
+  }
+
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+    font-size: 40px;
+    margin-top: -20%;
+    margin-bottom: 40px;
+    width: 90%;
+    }
+    
+    
+    #inicio p{
+    font-size: 25px;
+    width: 80%;
+    margin-bottom: 30%;
+    }
+    
+    .create-site-button {
+      left: 50%;
+      transform: translate(-50%);
+      width: 60%;
+      padding: 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+      justify-content: center; /* Centralizando horizontalmente */
+      text-align: center; /* Garantindo que o texto esteja centralizado */
+    }
+    
+    
+    #create-site-button i {
+    margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+    }
+  
+    
+    .section-image {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    margin-left: -15px;
+    bottom: -320px;
+    width: 105%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+    }
+    
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+
+  #funcionalidades{
+    height: 160vh;
+  }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 20px;
+  }
+  
+  
+  .card {
+  color: white;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 80%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .icon-container {
+    padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 13px;
+  }
+
+
+
+  /* SEGUNDA-FUNCIONALIDADES */
+
+#segunda-funcionalidades{
+  height: 210vh;
+}
+
+#segunda-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#segunda-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+
+#segunda-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#segunda-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#segunda-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#segunda-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#segunda-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.Site{
+  width: 55%;
+}
+
+.Oculto{
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* TERCEIRA-FUNCIONALIDADES */
+
+#terceira-funcionalidades{
+  height: 210vh;
+}
+
+#terceira-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#terceira-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+#terceira-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#terceira-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#terceira-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#terceira-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#terceira-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+  
+  
+  /*-----------------------------------------------------------------------*/
+  
+
+
+  /*--------------- QR CODE ----------------------------------------- */
+
+
+  #funcionalidades-qr{
+    height: 140vh;
+    }
+
+    .card {
+      display: block;
+      align-items: center;
+      border-radius: 10px;
+      height: 95vh;
+      margin: 20px;
+      }
+    
+    .section-divider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+    margin-bottom: -10px;
+    }
+    
+    .section-divider {
+    width: 50%;
+    }
+    
+    .section-text {
+    font-size: 18px;
+    }
+  
+#section-divider-linha{
+  width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+#QRCODE{
+  width: 45%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+
+#h3-informação{
+  width: 90%;
+  font-size: 18px;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+  cursor: pointer;
+}
+
+
+  
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 300vh;
+  }
+  
+  #planos h2{
+    font-size: 35px;
+    margin-top: 35%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 25px;
+  }
+  
+  .plan-card p.description {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 18px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 120vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-right: 5%; /* Espaçamento entre os cards */
+    margin-top: 80px;
+  }
+  
+  .left-card h2{
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    padding: 10px 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+
+
+
+  /*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 120vh;
+}
+
+#patrocinadores h2{
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 15%;
+  margin-bottom: 10px;
+}
+
+
+.card-patrocinadores {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  border-radius: 10px;
+  height: 75vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-patrocinadores img {
+  margin: -30px 0; /* Espaçamento entre as imagens */
+  max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+  border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+/* Para 430px */
+@media only screen and (min-width: 391px) and (max-width: 430px) {
+  
+  .title {
+    margin-left: -38%; /* Adicionando margem à esquerda do h1 */
+    font-size: 30px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizando o texto na lista */
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 100vh;
+  }
+  
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+    font-size: 40px;
+    margin-top: -30%;
+    margin-bottom: 40px;
+    width: 80%;
+    }
+    
+    
+    #inicio p{
+    font-size: 25px;
+    width: 80%;
+    margin-bottom: 30%;
+    }
+    
+    .create-site-button {
+      left: 50%;
+      transform: translate(-50%);
+      width: 70%;
+      padding: 15px;
+      font-size: 20px;
+      display: flex;
+      align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+      justify-content: center; /* Centralizando horizontalmente */
+      text-align: center; /* Garantindo que o texto esteja centralizado */
+    }
+    
+    
+    #create-site-button i {
+    margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+    }
+  
+    
+    .section-image {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: -320px;
+    width: 95%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+    }
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+
+  #funcionalidades{
+    height: 150vh;
+  }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 20px;
+  }
+  
+  
+  .card {
+  color: white;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 80%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 25px;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .icon-container {
+    padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 15px;
+  }
+
+/* SEGUNDA-FUNCIONALIDADES */
+
+#segunda-funcionalidades{
+  height: 210vh;
+}
+
+#segunda-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#segunda-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+
+#segunda-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#segunda-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#segunda-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#segunda-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#segunda-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.Site{
+  width: 55%;
+}
+
+.Oculto{
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* TERCEIRA-FUNCIONALIDADES */
+
+#terceira-funcionalidades{
+  height: 210vh;
+}
+
+#terceira-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#terceira-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+#terceira-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#terceira-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#terceira-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#terceira-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#terceira-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+  
+  
+  /*-----------------------------------------------------------------------*/
+  
+  
+
+   /*--------------- QR CODE ----------------------------------------- */
+
+
+   #funcionalidades-qr{
+    height: 140vh;
+    }
+
+    .card {
+      display: block;
+      align-items: center;
+      border-radius: 10px;
+      height: 95vh;
+      margin: 20px;
+      }
+    
+    .section-divider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+    margin-bottom: -10px;
+    }
+    
+    .section-divider {
+    width: 50%;
+    }
+    
+  
+#section-divider-linha{
+  width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+#QRCODE{
+  width: 50%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+
+#h3-informação{
+  width: 90%;
+  font-size: 20px;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+  cursor: pointer;
+}
+
+
+
+
+
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 280vh;
+  }
+  
+  #planos h2{
+    font-size: 35px;
+    margin-top: 35%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 25px;
+  }
+  
+  .plan-card p.description {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 18px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 100vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-right: 5%; /* Espaçamento entre os cards */
+    margin-top: 80px;
+  }
+  
+  .left-card h2{
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    padding: 10px 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+
+  /*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 120vh;
+}
+
+#patrocinadores h2{
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 15%;
+  margin-bottom: 10px;
+}
+
+
+.card-patrocinadores {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  border-radius: 10px;
+  height: 75vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-patrocinadores img {
+  margin: -30px 0; /* Espaçamento entre as imagens */
+  max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+  border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+}
+
+  
+}
+
+/* Para 699px */
+@media only screen and (min-width: 431px) and (max-width: 699px) {
+  .title {
+    margin-left: -38%; /* Adicionando margem à esquerda do h1 */
+    font-size: 30px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizando o texto na lista */
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 100vh;
+  }
+  
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+    font-size: 40px;
+    margin-top: -30%;
+    margin-bottom: 40px;
+    width: 80%;
+    }
+    
+    
+    #inicio p{
+    font-size: 25px;
+    width: 80%;
+    margin-bottom: 30%;
+    }
+    
+    .create-site-button {
+      left: 50%;
+      transform: translate(-50%);
+      width: 70%;
+      padding: 15px;
+      font-size: 20px;
+      display: flex;
+      align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+      justify-content: center; /* Centralizando horizontalmente */
+      text-align: center; /* Garantindo que o texto esteja centralizado */
+    }
+    
+    
+    #create-site-button i {
+    margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+    }
+  
+    
+    .section-image {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: -230px;
+    width: 65%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+    }
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 20px;
+  }
+  
+  
+  .card {
+  color: white;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 25px;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .icon-container {
+    padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 15px;
+  }
+  
+
+
+
+  /* SEGUNDA-FUNCIONALIDADES */
+
+#segunda-funcionalidades{
+  height: 200vh;
+}
+
+#segunda-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#segunda-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+
+#segunda-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#segunda-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#segunda-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#segunda-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#segunda-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.Site{
+  width: 55%;
+}
+
+.Oculto{
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* TERCEIRA-FUNCIONALIDADES */
+
+#terceira-funcionalidades{
+  height: 200vh;
+}
+
+#terceira-funcionalidades .card-container {
+  display: block; /* Alterado para exibir os cards abaixo um do outro */
+}
+
+#terceira-funcionalidades .card {
+  border-radius: 0px;
+  padding: 20px;
+  width: 80%; /* Defina a largura desejada para os cards */
+}
+
+#terceira-funcionalidades .card-content {
+  display: block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#terceira-funcionalidades h2 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#terceira-funcionalidades h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#terceira-funcionalidades button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+#terceira-funcionalidades img {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+  
+  /*-----------------------------------------------------------------------*/
+  
+  
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 130vh;
+  }
+  
+  #planos h2{
+    font-size: 30px;
+    margin-top: 35%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 80vh; /* Altura máxima para ativar a barra de rolagem */
+    overflow: auto; /* Adicionando a barra de rolagem quando necessário */
+    scrollbar-width: thin; /* Largura fina para navegadores Firefox */
+    scrollbar-color: transparent transparent; /* Cor transparente para navegadores Firefox */
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 25px;
+  }
+  
+  .plan-card p.description {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 18px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 100vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-right: 5%; /* Espaçamento entre os cards */
+    margin-top: 80px;
+  }
+  
+  .left-card h2{
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    padding: 10px 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+  }
+
+/* Para 700px a 835px */
+@media only screen and (min-width: 700px) and (max-width: 810px) {
+ .title {
+    margin-left: -58%; /* Adicionando margem à esquerda do h1 */
+    font-size: 35px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizando o texto na lista */
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 100vh;
+  }
+  
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+    font-size: 50px;
+    margin-top: -40%;
+    margin-bottom: 40px;
+    width: 80%;
+    text-align: center;
+    }
+    
+    
+    #inicio p{
+    font-size: 35px;
+    width: 80%;
+    margin-bottom: 30%;
+    text-align: center;
+    }
+    
+    .create-site-button {
+      left: 50%;
+      transform: translate(-50%);
+      width: 70%;
+      padding: 20px;
+      font-size: 30px;
+      margin-bottom: 5%;
+      display: flex;
+      align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+      justify-content: center; /* Centralizando horizontalmente */
+      text-align: center; /* Garantindo que o texto esteja centralizado */
+    }
+    
+    
+    #create-site-button i {
+    margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+    }
+  
+    
+    .section-image {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: -240%;
+    width: 75%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+    }
+  
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+
+  #funcionalidades{
+    height: 150vh;
+  }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 25px;
+  }
+  
+  
+  .card {
+  color: white;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .icon-container {
+    padding: 0px 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 20px;
+  }
+
+
+
+  /* SEGUNDA E TERCEIRA FUNCIONALIDADES */
+
+  #segunda-funcionalidades,
+  #terceira-funcionalidades{
+    height: 110vh;
+  }
+
+  #segunda-funcionalidades h2,
+  #terceira-funcionalidades h2 {
+    text-align: center;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  #segunda-funcionalidades h3,
+  #terceira-funcionalidades h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  
+  #segunda-funcionalidades button {
+    border: 2px solid #0056b3; /* Adicionando uma borda azul */
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Site{
+    width: 65%;
+  }
+  
+  .Oculto{
+    width: 140%;
+    transform: translate(-58px, 0px);
+  }
+
+
+/*-----------------------------------------------------------------------*/
+  
+
+
+/*--------------- QR CODE ----------------------------------------- */
+
+
+#funcionalidades-qr{
+  height: 140vh;
+  }
+
+  .card {
+    display: block;
+    align-items: center;
+    border-radius: 10px;
+    height: 95vh;
+    margin: 20px;
+    }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+
+#section-divider-linha{
+width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+#QRCODE{
+width: 50%;
+margin: 50px auto;
+border-radius: 10px;
+}
+
+
+#h3-informação{
+width: 90%;
+font-size: 23px;
+text-align: center;
+margin: auto;
+margin-bottom: 30px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+cursor: pointer;
+}
+
+  
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 280vh;
+  }
+  
+  #planos h2{
+    font-size: 40px;
+    margin-top: 5%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 30px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 30px;
+  }
+  
+  .plan-card p.description {
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 20px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 120vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-left: 5%; /* Espaçamento entre os cards */
+    margin-top: 80px;
+  }
+  
+  .left-card h2{
+    padding: 10px;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    padding: 10px;
+    font-size: 30px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    margin-left: 10px;
+    padding: 15px 60px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+
+   /*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 140vh;
+}
+
+#patrocinadores h2{
+  text-align: center;
+  margin: auto;
+  font-size: 45px;
+  margin-top: 15%;
+  margin-bottom: 30px;
+}
+
+
+.card-patrocinadores {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  border-radius: 10px;
+  height: 75vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-patrocinadores img {
+  margin: -110px 0; /* Espaçamento entre as imagens */
+  max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+  border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+}
+
+  
+  
+}
+
+@media only screen and (min-width: 811px) and (max-width: 830px) {
+  .title {
+     margin-left: -58%; /* Adicionando margem à esquerda do h1 */
+     font-size: 35px;
+   }
+   
+   .menu {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     text-align: center; /* Centralizando o texto na lista */
+   }
+   
+   .menu li {
+     display: inline;
+     margin-right: 30px;
+     font-size: 20px;
+   }
+   
+   .menu li a {
+     color: white;
+     text-decoration: none;
+   }
+ 
+   #menu-text,
+   #menu-text-button{
+     display: none;
+   }
+ 
+   #menu-icon {
+     font-size: 20px;
+     background-color: #0d6ede;
+     padding: 10px;
+     border-radius: 50%;
+     display: flex;
+   }
+   
+   .button {
+     padding: 10px 20px;
+     font-size: 18px;
+   }
+   
+   .section {
+     width: 100%;
+     height: 100vh;
+     overflow-x: hidden ;
+     padding: 0px 0;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+   
+   .section h2 {
+     margin-bottom: 20px;
+   }
+   
+   .section p {
+     margin-bottom: 40px;
+   }
+   
+   
+   /*----------- Início -------------------------------*/
+   #início{
+     height: 100vh;
+   }
+   
+   #inicio div{
+     position: absolute;
+   }
+   
+   #inicio h2,
+   #inicio p {
+     text-align: left;
+     margin-left: auto;
+     margin-right: auto;
+   }  
+   
+   #inicio h2{
+     font-size: 50px;
+     margin-top: -40%;
+     margin-bottom: 40px;
+     width: 80%;
+     text-align: center;
+     }
+     
+     
+     #inicio p{
+     font-size: 35px;
+     width: 80%;
+     margin-bottom: 30%;
+     text-align: center;
+     }
+     
+     .create-site-button {
+       left: 50%;
+       transform: translate(-50%);
+       width: 70%;
+       padding: 20px;
+       font-size: 30px;
+       margin-bottom: 5%;
+       display: flex;
+       align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+       justify-content: center; /* Centralizando horizontalmente */
+       text-align: center; /* Garantindo que o texto esteja centralizado */
+     }
+     
+     
+     #create-site-button i {
+     margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+     }
+   
+     
+     .section-image {
+     left: 0px;
+     right: 0px;
+     margin: auto;
+     bottom: -240%;
+     width: 75%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+     }
+   
+   
+   
+   /*--------------------------------------------------------------------------------------- */
+   
+   
+   /*-------- Funcionalidades --------------------*/
+ 
+   #funcionalidades{
+     height: 150vh;
+   }
+   
+   .section-divider-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 5vh; /* Espaçamento entre o botão e o hr/p */
+   margin-bottom: -10px;
+   }
+   
+   .section-divider {
+   width: 50%;
+   }
+   
+   .section-text {
+   font-size: 25px;
+   }
+   
+   
+   .card {
+   color: white;
+   display: block;
+   align-items: center;
+   border-radius: 10px;
+   height: 90vh;
+   margin: 20px;
+   }
+   
+   .card-image {
+   width: 80%;
+   height: auto;
+   margin-bottom: 30px;
+   }
+   
+   .card-content {
+     margin-left: auto; /* Remover a margem à esquerda */
+     margin-right: auto; /* Remover a margem à direita */
+   }
+   
+   .card-content h2{
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: 30px;
+   margin-top: 0vh;
+   text-align: center;
+   margin-bottom: 50px;
+   }
+   
+   .icon-container {
+     padding: 0px 95px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+   }
+   
+   .icon {
+   flex-basis: 45%; /* Largura de cada ícone */
+   display: flex;
+   align-items: center;
+   }
+   
+   .icon i {
+   margin-right: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   }
+ 
+   .icon h3{
+     font-size: 20px;
+   }
+ 
+ 
+ 
+   /* SEGUNDA E TERCEIRA FUNCIONALIDADES */
+ 
+   #segunda-funcionalidades,
+   #terceira-funcionalidades{
+     height: 110vh;
+   }
+ 
+   #segunda-funcionalidades h2,
+   #terceira-funcionalidades h2 {
+     text-align: center;
+     width: 100%;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 35px;
+     font-weight: 700;
+     margin-bottom: 10px;
+   }
+   
+   #segunda-funcionalidades h3,
+   #terceira-funcionalidades h3 {
+     text-align: center;
+     font-size: 20px;
+     font-weight: 400;
+     margin-bottom: 15px;
+   }
+   
+   #segunda-funcionalidades button {
+     border: 2px solid #0056b3; /* Adicionando uma borda azul */
+     border-radius: 10px;
+     padding: 10px 30px;
+     font-size: 18px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+   
+   .Site{
+     width: 65%;
+   }
+   
+   .Oculto{
+     width: 140%;
+     transform: translate(-58px, 0px);
+   }
+ 
+ 
+ /*-----------------------------------------------------------------------*/
+   
+ 
+ 
+ /*--------------- QR CODE ----------------------------------------- */
+ 
+ 
+ #funcionalidades-qr{
+   height: 140vh;
+   }
+ 
+   .card {
+     display: block;
+     align-items: center;
+     border-radius: 10px;
+     height: 95vh;
+     margin: 20px;
+     }
+   
+   .section-divider-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+   margin-bottom: -10px;
+   }
+   
+   .section-divider {
+   width: 50%;
+   }
+   
+ 
+ #section-divider-linha{
+ width: 50%;
+ border: 2px solid #000000; /* Cor da linha */
+ border-radius: 50px;
+ }
+ 
+ #QRCODE{
+ width: 50%;
+ margin: 50px auto;
+ border-radius: 10px;
+ }
+ 
+ 
+ #h3-informação{
+ width: 90%;
+ font-size: 23px;
+ text-align: center;
+ margin: auto;
+ margin-bottom: 30px;
+ }
+ 
+ #ideias-funcionalidades,
+ #ideias-comunicação,
+ #ideias-layoult {
+ cursor: pointer;
+ }
+ 
+   
+   /*--------------- Planos ----------------------------------------- */
+   #planos {
+     height: 250vh;
+   }
+   
+   #planos h2{
+     font-size: 40px;
+     margin-top: -35%;
+     margin-bottom: 10px;
+   }
+   
+   #planos .sub{
+     font-size: 30px;
+     margin-bottom: 10px;
+   }
+   
+   .selecionar-planos {
+     display: flex;
+     justify-content: space-around;
+     padding: 1px 0;
+     width: 80%;
+     z-index: 1;
+     border-radius: 50px;
+     margin: 30px auto;
+     margin-bottom: 40px;
+   }
+   
+   .selecionar-planos a {
+     text-decoration: none;
+     padding: 10px 15px;
+     font-size: 25px;
+     font-weight: 700;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transition: background-color 0.3s ease;
+     flex: 1;
+     cursor: pointer;
+   }
+   
+   .plan-cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+   
+   .plan-card {
+     border-radius: 10px;
+     width: 300px;
+     margin: 20px;
+     padding: 30px;
+     display: flex; /* Adicionando display flex para alinhar verticalmente */
+     flex-direction: column; /* Alinhando os itens verticalmente */
+     justify-content: center; /* Centralizando verticalmente */
+     text-align: center; /* Centralizando horizontalmente */
+   }
+   
+   .plan-card .Plano {
+     font-size: 40px;
+     text-align: center;
+     margin-bottom: 10px;
+   }
+   
+   .plan-card p {
+     margin-bottom: 10px;
+   }
+   
+   #planos .valor-x{
+     font-size: 30px;
+   }
+   
+   .plan-card p.description {
+     font-size: 20px;
+     margin-bottom: 5px;
+     text-align: left;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start; /* Alinhando à esquerda */
+   }
+   
+   .plan-card p.description i {
+     margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+     padding: 2px;
+     border-radius: 50px;
+   }
+   
+   .subscribe-button {
+   font-size: 20px;
+   width: 50%;
+   padding: 10px;
+   margin: auto;
+   margin-top: 10px;
+   border: none;
+   border-radius: 5px;
+  cursor: pointer;
+   }
+   
+   /*----------------------------------------------------------------------- */
+   
+   
+   /* ------------- Ajuda --------------------------------------------------------------*/
+   
+   /* Estilo para a seção de ajuda */
+   #ajuda {
+     height: 120vh; /* Altura ajustada para o conteúdo do card */
+   }
+   
+   .left-card {
+     float: left;
+     padding: 20px;
+     margin-left: 5%; /* Espaçamento entre os cards */
+     margin-top: 80px;
+   }
+   
+   .left-card h2{
+     padding: 10px;
+     font-size: 40px;
+     text-align: left;
+     margin-bottom: 40px;
+   }
+   
+   .left-card p{
+     padding: 10px;
+     font-size: 30px;
+     text-align: left;
+   }
+   
+   .left-card button{
+     margin-left: 10px;
+     padding: 15px 60px;
+     font-size: 25px;
+     border-radius: 5px;
+     border: none;
+   }
+   
+   .right-card {
+     text-align: left;
+     float: right;
+     padding: 20px;
+     margin-left: 35%; /* Espaçamento entre os cards */
+   }
+   
+   .right-card p{
+     font-size: 25px;
+     margin-bottom: 10px;
+   }
+   
+   .pergunta{
+     cursor: pointer;
+   }
+   
+   .resposta {
+     padding: 5px;
+     border-radius: 5px;
+     display: none;
+   }
+   
+   /*---------------------------------------------------------- */
+   
+ 
+    /*--------------- Patrocinadores ----------------------------------------- */
+ 
+ 
+ #patrocinadores {
+   height: 140vh;
+ }
+ 
+ #patrocinadores h2{
+   text-align: center;
+   margin: auto;
+   font-size: 45px;
+   margin-top: 15%;
+   margin-bottom: 30px;
+ }
+ 
+ 
+ .card-patrocinadores {
+   display: flex;
+   flex-direction: column; /* Alinha os itens verticalmente */
+   align-items: center;
+   border-radius: 10px;
+   height: 75vh;
+   margin: 20px;
+   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .card-patrocinadores img {
+   margin: -110px 0; /* Espaçamento entre as imagens */
+   max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+   border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+ }
+ 
+
+
+   
+ }
+
+/* Para 836px a 1089px */
+@media only screen and (min-width: 831px) and (max-width: 1089px) {
+
+  .title {
+    margin-left: -58%; /* Adicionando margem à esquerda do h1 */
+    font-size: 35px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizando o texto na lista */
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #menu-text,
+  #menu-text-button{
+    display: none;
+  }
+
+  #menu-icon {
+    font-size: 20px;
+    background-color: #0d6ede;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .section {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden ;
+    padding: 0px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin-bottom: 40px;
+  }
+  
+  
+  /*----------- Início -------------------------------*/
+  #início{
+    height: 100vh;
+  }
+  
+  #inicio div{
+    position: absolute;
+  }
+  
+  #inicio h2,
+  #inicio p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  #inicio h2{
+    font-size: 60px;
+    margin-top: -30%;
+    margin-bottom: 40px;
+    width: 90%;
+    }
+    
+    
+    #inicio p{
+    font-size: 35px;
+    width: 80%;
+    margin-bottom: 30%;
+    }
+    
+    .create-site-button {
+      left: 50%;
+      transform: translate(-50%);
+      width: 70%;
+      padding: 20px;
+      font-size: 30px;
+      margin-bottom: 5%;
+      display: flex;
+      align-items: center; /* Alinhando verticalmente o conteúdo do botão */
+      justify-content: center; /* Centralizando horizontalmente */
+      text-align: center; /* Garantindo que o texto esteja centralizado */
+    }
+    
+    
+    #create-site-button i {
+    margin-right: 5px; /* Ajustando a margem entre o ícone e o texto */
+    }
+  
+    
+    .section-image {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: -180%;
+    width: 75%; /* Defina o tamanho máximo da imagem conforme necessário */ 
+    }
+  
+  
+  /*--------------------------------------------------------------------------------------- */
+  
+  
+  /*-------- Funcionalidades --------------------*/
+
+  #funcionalidades{
+    height: 150vh;
+  }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+  .section-text {
+  font-size: 25px;
+  }
+  
+  
+  .card {
+  color: white;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 20px;
+  }
+  
+  .card-image {
+  width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+  }
+  
+  .card-content {
+    margin-left: auto; /* Remover a margem à esquerda */
+    margin-right: auto; /* Remover a margem à direita */
+  }
+  
+  .card-content h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  margin-top: 0vh;
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .icon-container {
+    padding: 0px 115px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh; /* Espaçamento entre as linhas de ícones */
+  }
+  
+  .icon {
+  flex-basis: 45%; /* Largura de cada ícone */
+  display: flex;
+  align-items: center;
+  }
+  
+  .icon i {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+  .icon h3{
+    font-size: 20px;
+  }
+
+
+
+  /* SEGUNDA E TERCEIRA FUNCIONALIDADES */
+
+  #segunda-funcionalidades,
+  #terceira-funcionalidades{
+    height: 105vh;
+  }
+
+  #segunda-funcionalidades h2,
+  #terceira-funcionalidades h2 {
+    text-align: center;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  #segunda-funcionalidades h3,
+  #terceira-funcionalidades h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  
+  #segunda-funcionalidades button {
+    border: 2px solid #0056b3; /* Adicionando uma borda azul */
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Site{
+    width: 65%;
+  }
+  
+  .Oculto{
+    width: 140%;
+    transform: translate(-58px, 0px);
+  }
+
+
+/*-----------------------------------------------------------------------*/
+  
+
+/*--------------- QR CODE ----------------------------------------- */
+
+
+#funcionalidades-qr{
+  height: 140vh;
+  }
+
+  .card {
+    display: block;
+    align-items: center;
+    border-radius: 10px;
+    height: 95vh;
+    margin: 20px;
+    }
+  
+  .section-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40vh; /* Espaçamento entre o botão e o hr/p */
+  margin-bottom: -10px;
+  }
+  
+  .section-divider {
+  width: 50%;
+  }
+  
+
+#section-divider-linha{
+width: 50%;
+border: 2px solid #000000; /* Cor da linha */
+border-radius: 50px;
+}
+
+#QRCODE{
+width: 40%;
+margin: 50px auto;
+border-radius: 10px;
+}
+
+
+#h3-informação{
+  color: #ddd;
+width: 90%;
+font-size: 23px;
+text-align: center;
+margin: auto;
+margin-bottom: 50px;
+}
+
+#ideias-funcionalidades,
+#ideias-comunicação,
+#ideias-layoult {
+cursor: pointer;
+}
+
+  
+  /*--------------- Planos ----------------------------------------- */
+  #planos {
+    height: 210vh;
+  }
+  
+  #planos h2{
+    font-size: 40px;
+    margin-top: 35%;
+    margin-bottom: 10px;
+  }
+  
+  #planos .sub{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .selecionar-planos {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 0;
+    width: 80%;
+    z-index: 1;
+    border-radius: 50px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+  
+  .selecionar-planos a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .plan-card {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    padding: 30px;
+    display: flex; /* Adicionando display flex para alinhar verticalmente */
+    flex-direction: column; /* Alinhando os itens verticalmente */
+    justify-content: center; /* Centralizando verticalmente */
+    text-align: center; /* Centralizando horizontalmente */
+  }
+  
+  .plan-card .Plano {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .plan-card p {
+    margin-bottom: 10px;
+  }
+  
+  #planos .valor-x{
+    font-size: 30px;
+  }
+  
+  .plan-card p.description {
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando à esquerda */
+  }
+  
+  .plan-card p.description i {
+    margin-right: 20px; /* Espaçamento entre o ícone e o texto */
+    padding: 2px;
+    border-radius: 50px;
+  }
+  
+  .subscribe-button {
+  font-size: 20px;
+  width: 50%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+ cursor: pointer;
+  }
+  
+  /*----------------------------------------------------------------------- */
+  
+  
+  /* ------------- Ajuda --------------------------------------------------------------*/
+  
+  /* Estilo para a seção de ajuda */
+  #ajuda {
+    height: 120vh; /* Altura ajustada para o conteúdo do card */
+  }
+  
+  .left-card {
+    float: left;
+    padding: 20px;
+    margin-left: 5%; /* Espaçamento entre os cards */
+    margin-top: 80px;
+  }
+  
+  .left-card h2{
+    padding: 10px;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .left-card p{
+    padding: 10px;
+    font-size: 30px;
+    text-align: left;
+  }
+  
+  .left-card button{
+    margin-left: 10px;
+    padding: 15px 60px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .right-card {
+    text-align: left;
+    float: right;
+    padding: 20px;
+    margin-left: 35%; /* Espaçamento entre os cards */
+  }
+  
+  .right-card p{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .pergunta{
+    cursor: pointer;
+  }
+  
+  .resposta {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /*---------------------------------------------------------- */
+  
+
+
+   /*--------------- Patrocinadores ----------------------------------------- */
+
+
+#patrocinadores {
+  height: 140vh;
+}
+
+#patrocinadores h2{
+  text-align: center;
+  margin: auto;
+  font-size: 75px;
+  margin-top: 15%;
+  margin-bottom: 30px;
+}
+
+
+.card-patrocinadores {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+  border-radius: 10px;
+  height: 75vh;
+  margin: 20px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-patrocinadores img {
+  margin: -80px 0; /* Espaçamento entre as imagens */
+  max-width: 90%; /* Opcional: para garantir que as imagens não excedam a largura do contêiner */
+  border-radius: 5px; /* Opcional: para adicionar bordas arredondadas às imagens */
+}
+
+  
+}
+
+
+@media only screen and (min-width:1090px) and (max-width:1490px){/* Adicione suas regras CSS aqui */
+  #menu-icon {
+    display: none;
+  }
+  
+  /*-----------------------------------------------------------------------*/
+  
+}
